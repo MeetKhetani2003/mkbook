@@ -1,5 +1,5 @@
 
-import { work1, work2, work3, work4, work5, work6 } from "../assets/assets.js";
+import { work1, work2, work3, work4, work5, work6, pebble_1, pebble_2, pebble_3, pebble_4, pebble_5 } from "../assets/assets.js";
 export type Chapter = {
   number: string;
   category: string;
@@ -101,6 +101,62 @@ export const chapters: Chapter[] = [
           "Plate I.VI — Sculptural wall composition integrating symbolic form with contemporary architectural minimalism."
       }
     ]
+  },
+  {
+    number: "II",
+    category: "Fragments of Stillness",
+    title: "Pebble Art Collection",
+    subtitle: "Handcrafted sculptural narratives formed through stone, balance & emotion",
+    year: "MMXXVI",
+    location: "Collectible Artisan Series",
+    architect: "MK Creations Atelier",
+    intro:
+      "Fragments of Stillness explores the emotional language of stone. Each composition transforms naturally weathered pebbles into intimate sculptural narratives — meditations on memory, connection, family, and silence.",
+
+    body: [
+      "Minimal in material yet monumental in emotion, these works exist between sculpture and poetry. Organic forms are carefully balanced to create moments of tenderness, movement, and human presence through the permanence of stone.",
+
+      "Presented within refined architectural environments, the collection celebrates craftsmanship, restraint, and the quiet luxury of handmade artistry. Each plate becomes an encounter between texture, emotion, and timeless spatial calm.",
+    ],
+
+    specs: [
+      { label: "Medium", value: "Natural Pebbles · Stone · Driftwood" },
+      { label: "Techniques", value: "Hand Composition · Sculptural Balance" },
+      { label: "Collection", value: "Fragments of Stillness" },
+      { label: "Atelier", value: "MK Creations" },
+    ],
+
+    images: [
+      {
+        src: pebble_1,
+        caption:
+          "Plate I — The Silent Figure, a sculptural meditation on solitude and balance.",
+      },
+
+      {
+        src: pebble_2,
+        caption:
+          "Plate II — Sisters Apart, an intimate composition exploring connection through distance.",
+      },
+
+      {
+        src: pebble_3,
+        caption:
+          "Plate III — The Heart Vessel, a study of emotional weight through collected stone forms.",
+      },
+
+      {
+        src: pebble_4,
+        caption:
+          "Plate IV — Family Narratives, handcrafted moments translated into sculptural pebble tableaux.",
+      },
+
+      {
+        src: pebble_5,
+        caption:
+          "Plate V — Togetherness, a suspended composition exploring intimacy, stillness, and trust.",
+      },
+    ],
   }
 ];
 
