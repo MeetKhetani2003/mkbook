@@ -232,12 +232,17 @@ body {
 
 /* Vignette overlay */
 .vignette {
+  background: radial-gradient(circle at center, transparent 0%, rgba(181, 154, 109, 0.03) 60%, rgba(181, 154, 109, 0.08) 100%);
   position: fixed;
   inset: 0;
   pointer-events: none;
-  background:
-    radial-gradient(ellipse at center, transparent 40%, rgba(181, 154, 109, 0.1) 100%);
   z-index: 30;
+}
+
+@media (max-width: 640px) {
+  .luxury-page {
+    font-size: 14px;
+  }
 }
 
 /* Atmospheric grain */
@@ -298,12 +303,21 @@ body {
 
 /* Drop cap */
 .dropcap::first-letter {
-  font-family: 'Italiana', serif;
-  font-size: 5.2em;
   float: left;
+  font-family: var(--font-serif-display);
+  font-size: 3.5rem;
   line-height: 0.85;
-  padding: 0.05em 0.12em 0 0;
-  color: #8a6f48;
+  padding-top: 4px;
+  padding-right: 8px;
+  color: var(--gold-bright);
+}
+
+@media (max-width: 480px) {
+  .dropcap::first-letter {
+    font-size: 2.8rem;
+    padding-top: 2px;
+    padding-right: 6px;
+  }
 }
 
 @media (max-width: 768px) {

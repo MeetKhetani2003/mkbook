@@ -29,22 +29,28 @@ export default function App() {
   let pageHeight: number;
 
   if (isMobile) {
-    pageWidth = Math.min(w - 20, 500);
-    pageHeight = Math.min(h - 100, pageWidth * PAGE_RATIO);
+    const availW = w - 32;
+    const availH = h - 160;
+    pageWidth = availW;
+    pageHeight = pageWidth * PAGE_RATIO;
+    if (pageHeight > availH) {
+      pageHeight = availH;
+      pageWidth = pageHeight / PAGE_RATIO;
+    }
   } else {
     // landscape spread: two pages side by side
-    const availW = Math.min(w - 60, 1600); // More width
-    const availH = Math.min(h - 100, 950); // More height
-    // book total width = 2 * pageWidth, height = pageHeight; aim ratio ~ (2/PAGE_RATIO):1
-    let bookW = availW;
-    let bookH = (bookW / 2) * PAGE_RATIO;
-    if (bookH > availH) {
-      bookH = availH;
-      bookW = (bookH * 2) / PAGE_RATIO;
+    const availW = Math.min(w - 64, 1600);
+    const availH = Math.min(h - 180, 950);
+    // book total width = 2 * pageWidth, height = pageHeight
+    pageHeight = availH;
+    pageWidth = pageHeight / PAGE_RATIO;
+    if (pageWidth * 2 > availW) {
+      pageWidth = availW / 2;
+      pageHeight = pageWidth * PAGE_RATIO;
     }
-    pageWidth = Math.floor(bookW / 2);
-    pageHeight = Math.floor(bookH);
   }
+  pageWidth = Math.floor(pageWidth);
+  pageHeight = Math.floor(pageHeight);
 
   // Intro state
   const [showIntro, setShowIntro] = useState(false);

@@ -3,7 +3,7 @@ import type { Chapter } from "../data/chapters";
 
 export default function EditorialPage({ chapter, index }: { chapter: Chapter; index: number }) {
   return (
-    <div className="relative w-full h-full flex flex-col p-6 sm:p-10 md:p-14 overflow-hidden">
+    <div className="relative w-full h-full flex flex-col p-4 sm:p-10 md:p-14 overflow-hidden">
       {/* Top meta bar */}
       <div className="flex items-start justify-between text-[10px] sm:text-xs font-sans-lux text-[#8a6f48]">
         <span>MK Creations · Folio {chapter.number}</span>
@@ -29,7 +29,7 @@ export default function EditorialPage({ chapter, index }: { chapter: Chapter; in
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.2, ease: [0.2, 0.7, 0.2, 1] }}
-        className="font-serif-display text-[#1a1612] text-3xl sm:text-5xl md:text-6xl leading-[0.95] mb-3"
+        className="font-serif-display text-[#1a1612] text-2xl sm:text-5xl md:text-6xl leading-[0.95] mb-2 sm:mb-3"
       >
         {chapter.title}
       </motion.h1>
@@ -63,7 +63,7 @@ export default function EditorialPage({ chapter, index }: { chapter: Chapter; in
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.1, delay: 0.65 }}
-        className="space-y-3 sm:space-y-4 text-[#2a221a] text-[12px] sm:text-[13px] md:text-[14px] leading-[1.7] font-serif max-w-md flex-1 overflow-hidden"
+        className="space-y-2 sm:space-y-4 text-[#2a221a] text-[11px] sm:text-[13px] md:text-[14px] leading-[1.6] sm:leading-[1.7] font-serif max-w-md flex-1 overflow-hidden"
       >
         <p className="dropcap">{chapter.body[0]}</p>
         {chapter.body[1] && <p className="hidden sm:block">{chapter.body[1]}</p>}

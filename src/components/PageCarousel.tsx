@@ -90,8 +90,15 @@ export default function PageCarousel({
         onSwiper={(s) => (swiperRef.current = s)}
         onReachEnd={handleReachEnd}
         onSlideChangeTransitionEnd={handleSlideChangeTransitionEnd}
-        onTouchStart={handleTouchStart}
-        onTouchEnd={handleTouchEnd}
+        onTouchStart={(s, e) => {
+          e.stopPropagation();
+          handleTouchStart(s, e);
+        }}
+        onTouchMove={(s, e) => e.stopPropagation()}
+        onTouchEnd={(s, e) => {
+          e.stopPropagation();
+          handleTouchEnd(s, e);
+        }}
         className="lux-swiper"
       >
         {images.map((img, i) => (

@@ -71,6 +71,7 @@ const FlipBook = forwardRef<FlipBookHandle, Props>(({ width, height, isMobile, o
 
   return (
     <HTMLFlipBook
+      key={isMobile ? "mobile" : "desktop"}
       ref={bookRef}
       width={width}
       height={height}
@@ -130,28 +131,26 @@ const FlipBook = forwardRef<FlipBookHandle, Props>(({ width, height, isMobile, o
         </div>
       </HardPage>
 
-      {/* === INSIDE FRONT — Foreword === */}
       <Page className="page-right">
         <div className="w-full h-full flex flex-col p-6 sm:p-10 md:p-14">
-          <p className="font-sans-lux text-[10px] sm:text-xs text-[#8a6f48] mb-6 sm:mb-10">Foreword</p>
+          <p className="font-sans-lux text-[10px] sm:text-xs text-[#8a6f48] mb-6 sm:mb-10">The Vision</p>
           <h2 className="font-serif-display text-[#1a1612] text-3xl sm:text-5xl md:text-6xl leading-tight mb-6 sm:mb-10">
-            On the matter of <em className="font-serif italic">surface</em>.
+            Crafting the <em className="font-serif italic">unseen</em> details.
           </h2>
           <div className="rule max-w-[120px] mb-6 sm:mb-8" />
           <p className="font-serif italic text-[#3a3128] text-base sm:text-xl leading-snug mb-4 sm:mb-6 max-w-md">
-            A house is not built of walls. It is built of the surfaces those walls become — the
-            floors one walks across without thinking, the reliefs one passes daily, the inlays
-            that hold the morning light.
+            MK Creations is an architectural atelier dedicated to the art of the surface. We believe
+            that the ground we walk on and the walls that surround us are more than functional
+            boundaries — they are canvases for architectural expression.
           </p>
           <p className="font-serif text-[#2a221a] text-[13px] sm:text-sm leading-[1.8] max-w-md dropcap">
-            This volume gathers six commissions completed by the atelier during the past
-            twenty-four months. Each is presented as a chapter — an editorial study on the
-            facing page, and a sequence of photographic plates opposite. The reader is invited
-            to linger, to turn at their own pace, and to swipe through each plate until the
-            book itself proposes the next chapter.
+            This digital brochure showcases our recent works in bespoke marble inlays, waterjet precision
+            cutting, and sculptural surface artworks. From monumental luxury residences to high-end
+            hospitality projects, we bridge the gap between traditional stonemasonry and contemporary
+            architectural design.
           </p>
           <div className="mt-auto pt-6 sm:pt-10 flex items-end justify-between text-[10px] sm:text-xs font-sans-lux text-[#8a6f48]">
-            <span>The Editors</span>
+            <span>MK Creations Atelier</span>
             <span>— 001 —</span>
           </div>
         </div>
@@ -171,31 +170,31 @@ const FlipBook = forwardRef<FlipBookHandle, Props>(({ width, height, isMobile, o
         </Page>,
       ])}
 
-      {/* === COLOPHON === */}
       <Page className="page-left">
         <div className="w-full h-full flex flex-col p-6 sm:p-10 md:p-14">
-          <p className="font-sans-lux text-[10px] sm:text-xs text-[#8a6f48] mb-6 sm:mb-10">Colophon</p>
+          <p className="font-sans-lux text-[10px] sm:text-xs text-[#8a6f48] mb-6 sm:mb-10">Collaborations</p>
           <h2 className="font-serif-display text-[#1a1612] text-3xl sm:text-5xl leading-tight mb-6 sm:mb-10">
-            A note on the making of this book.
+            Bring your vision to reality.
           </h2>
           <div className="rule max-w-[120px] mb-6 sm:mb-8" />
           <div className="space-y-3 sm:space-y-4 text-[#2a221a] text-[12px] sm:text-sm leading-[1.8] font-serif max-w-md">
             <p>
-              Set in <em>Italiana</em> and <em>Cormorant Garamond</em>, with sans-serif notes in
-              Inter. Printed in two-colour offset on 170gsm Munken Pure, bound in linen with a
-              gold-foil stamped cover.
+              Every surface we create is a result of a deep dialogue between the architect, the
+              designer, and our artisans. We specialize in transforming complex geometric concepts
+              into tactile, permanent architectural statements.
             </p>
             <p>
-              All photography commissioned exclusively for this volume. Photographic direction
-              by the atelier. Editorial &amp; design by Studio Marenco, Milan.
+              Our services include material consultancy, waterjet precision cutting, hand-finishing,
+              and on-site installation oversight for global commissions.
             </p>
             <p className="italic">
-              No part of this book may be reproduced without the written consent of the publisher.
+              For inquiries regarding commissions, material samples, or technical specifications,
+              please reach out to our Rajkot or Milano offices.
             </p>
           </div>
           <div className="mt-auto pt-6 sm:pt-10 flex items-end justify-between text-[10px] sm:text-xs font-sans-lux text-[#8a6f48]">
-            <span>MK Creations · Rajkot</span>
-            <span>— 014 —</span>
+            <span>mkcreations.atelier</span>
+            <span>Rajkot · Milano</span>
           </div>
         </div>
       </Page>
