@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import gsap from "gsap";
 import FlipBook, { type FlipBookHandle } from "./components/FlipBook";
@@ -60,6 +60,44 @@ export default function App() {
   const [isGeneratingPDF, setIsGeneratingPDF] = useState(false);
   const stageRef = useRef<HTMLDivElement>(null);
   const bookContainerRef = useRef<HTMLDivElement>(null);
+
+  // Custom mobile touch swiping refs & handlers
+  const touchStartX = useRef<number | null>(null);
+  const touchStartY = useRef<number | null>(null);
+
+  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+    if (!isMobile) return;
+    
+    // Ignore swiping if touch started inside a photograph Swiper carousel
+    const target = e.target as HTMLElement;
+    if (target.closest(".lux-swiper")) return;
+
+    touchStartX.current = e.touches[0].clientX;
+    touchStartY.current = e.touches[0].clientY;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent<HTMLDivElement>) => {
+    if (!isMobile) return;
+    if (touchStartX.current === null || touchStartY.current === null) return;
+
+    const endX = e.changedTouches[0].clientX;
+    const endY = e.changedTouches[0].clientY;
+
+    const dx = endX - touchStartX.current;
+    const dy = endY - touchStartY.current;
+
+    // Horizontal swipe threshold: delta X > 50px, horizontal movement is dominant
+    if (Math.abs(dx) > 50 && Math.abs(dy) < 60) {
+      if (dx < -50) {
+        bookRef.current?.next();
+      } else {
+        bookRef.current?.prev();
+      }
+    }
+
+    touchStartX.current = null;
+    touchStartY.current = null;
+  };
 
   // GSAP cinematic intro
   useLayoutEffect(() => {
@@ -216,121 +254,125 @@ export default function App() {
       </AnimatePresence>
 
       {/* ===== TOP CHROME ===== */}
-        <div className="chrome-top absolute top-0 left-0 right-0 z-40 px-5 sm:px-10 pt-5 sm:pt-7 flex items-start justify-between pointer-events-none">
-          <div className="pointer-events-auto">
-            <img src={logo} alt="MK Creations" className="h-10 sm:h-14 w-auto object-contain brightness-110" />
-            <div className="font-sans-lux text-[7px] sm:text-[8px] text-[#8a6f48] mt-1 tracking-[0.2em]">
-              ATELIER · FOLIO IX · MMXXVI
-            </div>
-          </div>
-          <div className="pointer-events-auto text-right">
-            <div className="font-sans-lux text-[9px] sm:text-[10px] text-[#8a6f48]">
-              {String(pageInfo.page + 1).padStart(2, "0")}
-              <span className="opacity-50"> / </span>
-              {String(Math.max(pageInfo.total, 1)).padStart(2, "0")}
-            </div>
-            <div className="mt-2 w-32 sm:w-48 h-px bg-[#8a6f48]/20 overflow-hidden">
-              <motion.div
-                className="h-full bg-gradient-to-r from-[#8a6f48] to-[#e8c896]"
-                animate={{ width: `${progress}%` }}
-                transition={{ duration: 0.8, ease: [0.2, 0.7, 0.2, 1] }}
-              />
-            </div>
+      <div className="chrome-top absolute top-0 left-0 right-0 z-40 px-5 sm:px-10 pt-5 sm:pt-7 flex items-start justify-between pointer-events-none">
+        <div className="pointer-events-auto">
+          <img src={logo} alt="MK Creations" className="h-10 sm:h-14 w-auto object-contain brightness-110" />
+          <div className="font-sans-lux text-[7px] sm:text-[8px] text-[#8a6f48] mt-1 tracking-[0.2em]">
+            ATELIER · FOLIO IX · MMXXVI
           </div>
         </div>
+        <div className="pointer-events-auto text-right">
+          <div className="font-sans-lux text-[9px] sm:text-[10px] text-[#8a6f48]">
+            {String(pageInfo.page + 1).padStart(2, "0")}
+            <span className="opacity-50"> / </span>
+            {String(Math.max(pageInfo.total, 1)).padStart(2, "0")}
+          </div>
+          <div className="mt-2 w-32 sm:w-48 h-px bg-[#8a6f48]/20 overflow-hidden">
+            <motion.div
+              className="h-full bg-gradient-to-r from-[#8a6f48] to-[#e8c896]"
+              animate={{ width: `${progress}%` }}
+              transition={{ duration: 0.8, ease: [0.2, 0.7, 0.2, 1] }}
+            />
+          </div>
+        </div>
+      </div>
 
       {/* ===== BOOK STAGE ===== */}
-        <div className="book-stage absolute inset-0 flex items-center justify-center">
+      <div
+        className="book-stage absolute inset-0 flex items-center justify-center"
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+      >
+        <div
+          ref={bookContainerRef}
+          className="relative no-select"
+          style={{ transformStyle: "preserve-3d" }}
+        >
+          {/* Soft floor reflection */}
           <div
-            ref={bookContainerRef}
-            className="relative no-select"
-            style={{ transformStyle: "preserve-3d" }}
-          >
-            {/* Soft floor reflection */}
-            <div
-              className="absolute left-1/2 -translate-x-1/2 -bottom-10 sm:-bottom-16 w-[90%] h-12 sm:h-20 rounded-[50%] pointer-events-none"
-              style={{
-                background: "radial-gradient(ellipse, rgba(0,0,0,0.7), transparent 70%)",
-                filter: "blur(20px)",
-              }}
-            />
-            <FlipBook
-              ref={bookRef}
-              width={pageWidth}
-              height={pageHeight}
-              isMobile={isMobile}
-              onPageChange={handlePageChange}
-            />
-          </div>
+            className="absolute left-1/2 -translate-x-1/2 -bottom-10 sm:-bottom-16 w-[90%] h-12 sm:h-20 rounded-[50%] pointer-events-none"
+            style={{
+              background: "radial-gradient(ellipse, rgba(0,0,0,0.7), transparent 70%)",
+              filter: "blur(20px)",
+            }}
+          />
+          <FlipBook
+            ref={bookRef}
+            width={pageWidth}
+            height={pageHeight}
+            isMobile={isMobile}
+            onPageChange={handlePageChange}
+          />
         </div>
+      </div>
 
-      {/* ===== BOTTOM CHROME ===== */}
-        <div className="chrome-bottom absolute bottom-0 left-0 right-0 z-40 px-5 sm:px-10 pb-5 sm:pb-7 flex items-end justify-between pointer-events-none">
-          <div className="pointer-events-auto hidden sm:block">
-            <p className="font-serif italic text-[#8a6f48]/70 text-xs max-w-xs leading-snug">
-              Drag the page corner. Swipe the photographs. The book will turn itself when there is
-              nothing left to see.
-            </p>
-          </div>
+      <div className="pointer-events-auto absolute top-24 right-0 flex items-center gap-2 sm:gap-4 mx-auto sm:mx-0">
+        <button
+          onClick={handleDownloadPDF}
+          disabled={isGeneratingPDF}
+          className="lux-btn flex items-center gap-2 px-4 py-2 rounded-full text-[9px] sm:text-[10px] disabled:opacity-50"
+          aria-label="Download PDF Brochure"
+        >
+          {isGeneratingPDF ? (
+            <span className="flex items-center gap-2">
+              <svg className="animate-spin h-3 w-3" viewBox="0 0 24 24">
+                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+              </svg>
+              PREPARING...
+            </span>
+          ) : (
+            <>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
+                <polyline points="7 10 12 15 17 10" />
+                <line x1="12" y1="15" x2="12" y2="3" />
+              </svg>
+              DOWNLOAD PDF
+            </>
+          )}
+        </button>
 
-        <div className="pointer-events-auto flex items-center gap-2 sm:gap-4 mx-auto sm:mx-0">
+        <div className="flex items-center gap-2 sm:gap-3">
           <button
-            onClick={handleDownloadPDF}
-            disabled={isGeneratingPDF}
-            className="lux-btn flex items-center gap-2 px-4 py-2 rounded-full text-[9px] sm:text-[10px] disabled:opacity-50"
-            aria-label="Download PDF Brochure"
+            onClick={() => bookRef.current?.prev()}
+            className="lux-btn w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center"
+            aria-label="Previous page"
           >
-            {isGeneratingPDF ? (
-              <span className="flex items-center gap-2">
-                <svg className="animate-spin h-3 w-3" viewBox="0 0 24 24">
-                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
-                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
-                </svg>
-                PREPARING...
-              </span>
-            ) : (
-              <>
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
-                  <polyline points="7 10 12 15 17 10" />
-                  <line x1="12" y1="15" x2="12" y2="3" />
-                </svg>
-                DOWNLOAD PDF
-              </>
-            )}
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <path d="M15 18l-6-6 6-6" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
           </button>
-
-          <div className="flex items-center gap-2 sm:gap-3">
-            <button
-              onClick={() => bookRef.current?.prev()}
-              className="lux-btn w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center"
-              aria-label="Previous page"
-            >
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path d="M15 18l-6-6 6-6" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </button>
-            <div className="font-sans-lux text-[9px] sm:text-[10px] text-[#8a6f48]/70 px-2 hidden sm:block">
-              TURN
-            </div>
-            <button
-              onClick={() => bookRef.current?.next()}
-              className="lux-btn w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center"
-              aria-label="Next page"
-            >
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path d="M9 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </button>
+          <div className="font-sans-lux text-[9px] sm:text-[10px] text-[#8a6f48]/70 px-2 hidden sm:block">
+            TURN
           </div>
+          <button
+            onClick={() => bookRef.current?.next()}
+            className="lux-btn w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center"
+            aria-label="Next page"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <path d="M9 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      {/* ===== BOTTOM CHROME ===== */}
+      <div className="chrome-bottom absolute bottom-0 left-0 right-0 z-40 px-5 sm:px-10 pb-5 sm:pb-7 flex items-end justify-between pointer-events-none">
+        <div className="pointer-events-auto hidden sm:block">
+          <p className="font-serif italic text-[#8a6f48]/70 text-xs max-w-xs leading-snug">
+            Drag the page corner. Swipe the photographs. The book will turn itself when there is
+            nothing left to see.
+          </p>
         </div>
 
-          <div className="pointer-events-auto hidden sm:block text-right">
-            <p className="font-sans-lux text-[9px] text-[#2c2926]/50">
-              RAJKOT · MILANO · GLOBAL
-            </p>
-          </div>
+
+        <div className="pointer-events-auto hidden sm:block text-right">
+          <p className="font-sans-lux text-[9px] text-[#2c2926]/50">
+            RAJKOT · MILANO · GLOBAL
+          </p>
         </div>
+      </div>
 
       <div className="vignette" />
       <div className="grain" />

@@ -41,7 +41,8 @@ type Props = {
 
 const FlipBook = forwardRef<FlipBookHandle, Props>(({ width, height, isMobile, onPageChange }, ref) => {
   const bookRef = useRef<any>(null);
-  const [, setCurrent] = useState(0);
+  const [current, setCurrent] = useState(0);
+  const [isSwipeEnabled, setIsSwipeEnabled] = useState(true);
 
   useImperativeHandle(ref, () => ({
     next: () => bookRef.current?.pageFlip()?.flipNext(),
@@ -53,6 +54,12 @@ const FlipBook = forwardRef<FlipBookHandle, Props>(({ width, height, isMobile, o
     const pf = bookRef.current?.pageFlip();
     if (!pf) return;
     pf.flipNext();
+  };
+
+  const retreat = () => {
+    const pf = bookRef.current?.pageFlip();
+    if (!pf) return;
+    pf.flipPrev();
   };
 
   useEffect(() => {
@@ -84,13 +91,13 @@ const FlipBook = forwardRef<FlipBookHandle, Props>(({ width, height, isMobile, o
       showCover={true}
       mobileScrollSupport={true}
       drawShadow={true}
-      flippingTime={1100}
+      flippingTime={650} // Snappy page animation
       usePortrait={isMobile}
       startZIndex={0}
       autoSize={false}
       clickEventForward={true}
-      useMouseEvents={true}
-      swipeDistance={30}
+      useMouseEvents={!isMobile && isSwipeEnabled} // Disable buggy built-in gestures on mobile entirely
+      swipeDistance={80} // Stable, intentional swipe gestures
       showPageCorners={true}
       disableFlipByClick={false}
       startPage={0}
@@ -157,18 +164,38 @@ const FlipBook = forwardRef<FlipBookHandle, Props>(({ width, height, isMobile, o
       </Page>
 
       {/* === CHAPTERS === */}
-      {chapters.map((ch, i) => [
-        <Page key={`l-${i}`} className="page-left">
-          <EditorialPage chapter={ch} index={i} />
-        </Page>,
-        <Page key={`r-${i}`} className="page-right">
-          <PageCarousel
-            images={ch.images}
-            onAdvanceBook={advance}
-            plateLabel={`Folio ${ch.number} · Plates`}
-          />
-        </Page>,
-      ])}
+      {chapters.map((ch, i) => {
+        // Left page index is 2*i + 2, Right page index is 2*i + 3.
+        // We only render PageCarousel if it is nearby the current page spread (+/- 3 pages)
+        const leftPageIndex = 2 * i + 2;
+        const rightPageIndex = 2 * i + 3;
+        const isChapterNearby = Math.abs(current - leftPageIndex) <= 3 || Math.abs(current - rightPageIndex) <= 3;
+
+        return [
+          <Page key={`l-${i}`} className="page-left">
+            <EditorialPage chapter={ch} index={i} />
+          </Page>,
+          <Page key={`r-${i}`} className="page-right">
+            {isChapterNearby ? (
+              <PageCarousel
+                images={ch.images}
+                onAdvanceBook={advance}
+                onPrevBook={retreat}
+                plateLabel={`Folio ${ch.number} · Plates`}
+                onInteractionStart={() => setIsSwipeEnabled(false)}
+                onInteractionEnd={() => setIsSwipeEnabled(true)}
+              />
+            ) : (
+              <div className="w-full h-full flex flex-col items-center justify-center p-6 text-center bg-[#fcfaf7]">
+                <p className="font-sans-lux text-[10px] text-[#8a6f48]/50 tracking-[0.2em] mb-2">
+                  Atelier · Folio {ch.number}
+                </p>
+                <div className="w-12 h-px bg-[#8a6f48]/20 shimmer-text" />
+              </div>
+            )}
+          </Page>
+        ];
+      })}
 
       <Page className="page-left">
         <div className="w-full h-full flex flex-col p-6 sm:p-10 md:p-14">
