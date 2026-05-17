@@ -1,5 +1,5 @@
 
-import { work1, work2, work3, work4, work5, work6, pebble_1, pebble_2, pebble_3, pebble_4, pebble_5, sculpture1, sculpture2, sculpture3, sculpture4, sculpture5, sculpture6, sculpture7, sculpture8, sculpture9, sculpture10, sculpture11, sculpture12, engraving_1, engraving_2, engraving_3, engraving_4, engraving_5, engraving_6, engraving_7, engraving_8, engraving_9, engraving_10, engraving_11, engraving_12, engraving_13, engraving_14, engraving_15 } from "../assets/assets.js";
+import { work1, work2, work3, work4, work5, work6, pebble_1, pebble_2, pebble_3, pebble_4, pebble_5, sculpture1, sculpture2, sculpture3, sculpture4, sculpture5, sculpture6, sculpture7, sculpture8, sculpture9, sculpture10, sculpture11, sculpture12, engraving_1, engraving_2, engraving_3, engraving_4, engraving_5, engraving_6, engraving_7, engraving_8, engraving_9, engraving_10, engraving_11, engraving_12, engraving_13, engraving_14, engraving_15, gift_1, gift_2, gift_3, gift_4, gift_5, gift_6, gift_7, gift_8, gift_9, gift_10, gift_11, gift_12, gift_13 } from "../assets/assets.js";
 export type Chapter = {
   number: string;
   category: string;
@@ -441,7 +441,146 @@ export const chapters: Chapter[] = [
           "Plate XV — Om Lotus Relief Panel balancing minimal carving with meditative spatial symmetry."
       }
     ]
-  }
+  },
+  {
+    number: "V",
+
+    category: "Collectible Gift Articles",
+
+    title: "Objects of Everyday Luxury",
+
+    subtitle:
+      "Handcrafted marble lifestyle objects, collectible decor & refined gifting artifacts",
+
+    year: "MMXXVI",
+
+    location: "Luxury Residential · Hospitality · Curated Gifting",
+
+    architect: "MK Creations Atelier",
+
+    intro:
+      "Objects of Everyday Luxury explores the transformation of functional artifacts into collectible sculptural experiences. Each piece balances utility, craftsmanship, and material richness through marble, brass, wood, and handcrafted detailing.",
+
+    body: [
+      "Designed for luxury residences, hospitality environments, executive gifting, and curated interiors, the collection elevates everyday rituals through architectural object design and handcrafted material expression.",
+
+      "From marble tea-light holders and ornamental clocks to sacred collectibles, sculptural tabletop accessories, and handcrafted utility objects, each work is conceived as a refined lifestyle artifact rather than mass-produced decor.",
+
+      "The chapter celebrates tactile materiality, balanced geometry, artisanal craftsmanship, and the quiet elegance of collectible marble living."
+    ],
+
+    specs: [
+      {
+        label: "Medium",
+        value: "Marble · Brass · Walnut · Stone Inlay"
+      },
+
+      {
+        label: "Techniques",
+        value: "Handcrafting · Marble Turning · Inlay · Engraving"
+      },
+
+      {
+        label: "Applications",
+        value: "Luxury Gifting · Hospitality Styling · Residential Decor"
+      },
+
+      {
+        label: "Design Language",
+        value: "Minimal Luxury · Collectible Objects · Architectural Decor"
+      },
+
+      {
+        label: "Collection",
+        value: "Curated Marble Lifestyle Artifacts"
+      },
+
+      {
+        label: "Craft Origin",
+        value: "MK Creations Atelier"
+      }
+    ],
+
+    images: [
+      {
+        src: gift_1,
+        caption:
+          "Plate I — Marble Brass Tea Light Collection, balancing sculptural geometry with refined hospitality styling."
+      },
+
+      {
+        src: gift_2,
+        caption:
+          "Plate II — Sacred Ornamental Clock, integrating devotional artistry within collectible heritage decor."
+      },
+
+      {
+        src: gift_3,
+        caption:
+          "Plate III — Peacock Heritage Plate, handcrafted ornamental artistry inspired by traditional Indian decorative language."
+      },
+
+      {
+        src: gift_4,
+        caption:
+          "Plate IV — Marble Peacock Sculpture, a contemporary collectible object carved through minimal sculptural elegance."
+      },
+
+      {
+        src: gift_5,
+        caption:
+          "Plate V — Marble & Walnut Utility Collection, merging functional utility with architectural material refinement."
+      },
+
+      {
+        src: gift_6,
+        caption:
+          "Plate VI — Marble Hand Card Holder, transforming workplace utility into sculptural tabletop artistry."
+      },
+
+      {
+        src: gift_7,
+        caption:
+          "Plate VII — Sacred Cow & Calf Figurine, a devotional collectible object rendered through ornamental craftsmanship."
+      },
+
+      {
+        src: gift_8,
+        caption:
+          "Plate VIII — Marble Inlay Coaster Collection, celebrating handcrafted floral stone inlay artistry through luxury tabletop design."
+      },
+
+      {
+        src: gift_9,
+        caption:
+          "Plate IX — Floral Marble Coaster Set, refined engraved tabletop accessories designed for luxury hospitality environments."
+      },
+
+      {
+        src: gift_10,
+        caption:
+          "Plate X — Walnut & Brass Deer Container, balancing sculptural form with collectible functional design."
+      },
+
+      {
+        src: gift_11,
+        caption:
+          "Plate XI — Black Marble Vase Trio, minimalist architectural decor objects emphasizing material purity and silhouette."
+      },
+
+      {
+        src: gift_12,
+        caption:
+          "Plate XII — Sacred Marble Face Artifact, a collectible devotional sculpture scaled for luxury shelf styling."
+      },
+
+      {
+        src: gift_13,
+        caption:
+          "Plate XIII — Minimal Marble Goblet Artifact, exploring quiet sculptural geometry through handcrafted marble minimalism."
+      }
+    ]
+  };
 ];
 
 // For backward compatibility or other uses if any

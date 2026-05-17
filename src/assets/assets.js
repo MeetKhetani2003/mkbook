@@ -36,6 +36,19 @@ import engraving_12 from './engraving_12.jpeg';
 import engraving_13 from './engraving_13.jpeg';
 import engraving_14 from './engraving_14.jpeg';
 import engraving_15 from './engraving_15.jpeg';
+import gift_1 from './gift_1.jpeg';
+import gift_2 from './gift_2.jpeg';
+import gift_3 from './gift_3.jpeg';
+import gift_4 from './gift_4.jpeg';
+import gift_5 from './gift_5.jpeg';
+import gift_6 from './gift_6.jpeg';
+import gift_7 from './gift_7.jpeg';
+import gift_8 from './gift_8.jpeg';
+import gift_9 from './gift_9.jpeg';
+import gift_10 from './gift_10.jpeg';
+import gift_11 from './gift_11.jpeg';
+import gift_12 from './gift_12.jpeg';
+import gift_13 from './gift_13.jpeg';
 import logo from './MK Creation.png'
 
 export {
@@ -77,5 +90,18 @@ export {
     engraving_13,
     engraving_14,
     engraving_15,
+    gift_1,
+    gift_2,
+    gift_3,
+    gift_4,
+    gift_5,
+    gift_6,
+    gift_7,
+    gift_8,
+    gift_9,
+    gift_10,
+    gift_11,
+    gift_12,
+    gift_13,
     logo
 }
