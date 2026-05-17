@@ -1,5 +1,5 @@
 
-import { work1, work2, work3, work4, work5, work6, pebble_1, pebble_2, pebble_3, pebble_4, pebble_5 } from "../assets/assets.js";
+import { work1, work2, work3, work4, work5, work6, pebble_1, pebble_2, pebble_3, pebble_4, pebble_5, sculpture1, sculpture2, sculpture3, sculpture4, sculpture5, sculpture6, sculpture7, sculpture8, sculpture9, sculpture10, sculpture11, sculpture12 } from "../assets/assets.js";
 export type Chapter = {
   number: string;
   category: string;
@@ -157,6 +157,139 @@ export const chapters: Chapter[] = [
           "Plate V — Togetherness, a suspended composition exploring intimacy, stillness, and trust.",
       },
     ],
+  },
+  {
+    number: "III",
+
+    category: "Sacred Sculptures & Relief Art",
+
+    title: "The Devotional Atelier",
+
+    subtitle:
+      "Collectible spiritual sculptures, architectural reliefs & handcrafted sacred artistry",
+
+    year: "MMXXVI",
+
+    location: "Temple · Residential · Hospitality Interiors",
+
+    architect: "MK Creations Atelier",
+
+    intro:
+      "The Devotional Atelier explores the intersection of sacred symbolism, handcrafted sculpture, and architectural storytelling. Each work is conceived not merely as ornamentation, but as an emotional spiritual presence designed to inhabit refined contemporary interiors.",
+
+    body: [
+      "From intimate marble murtis and collectible devotional objects to monumental relief installations and ceremonial sculptural panels, the collection celebrates the timeless language of sacred craftsmanship through a contemporary editorial lens.",
+
+      "Executed through hand carving, relief sculpting, marble finishing, and layered artisanal detailing, these works balance devotion with restraint — creating sculptural experiences suited for luxury residences, spiritual galleries, hospitality environments, and collectible interiors.",
+
+      "Rather than reproducing traditional iconography mechanically, the atelier approaches each composition as an architectural object: calm, balanced, materially rich, and emotionally resonant."
+    ],
+
+    specs: [
+      {
+        label: "Medium",
+        value: "Marble · Stone Relief · Plaster · Resin"
+      },
+
+      {
+        label: "Techniques",
+        value: "Hand Sculpture · Relief Carving · Marble Finishing"
+      },
+
+      {
+        label: "Applications",
+        value: "Luxury Residences · Spiritual Interiors · Hospitality"
+      },
+
+      {
+        label: "Design Language",
+        value: "Sacred · Sculptural · Contemporary Devotional"
+      },
+
+      {
+        label: "Craft Origin",
+        value: "MK Creations Atelier"
+      },
+
+      {
+        label: "Timeline",
+        value: "MMXXIV — MMXXVI"
+      }
+    ],
+
+    images: [
+      {
+        src: sculpture1,
+        caption:
+          "Plate I — Lotus Mandala Relief, a sacred radial composition carved through layered sculptural geometry."
+      },
+
+      {
+        src: sculpture2,
+        caption:
+          "Plate II — Lotus & Nandi Partition, integrating devotional symbolism within contemporary architectural space."
+      },
+
+      {
+        src: sculpture3,
+        caption:
+          "Plate III — Portrait Relief Study, exploring texture, shadow, and ceremonial ornamentation."
+      },
+
+      {
+        src: sculpture4,
+        caption:
+          "Plate IV — Equestrian Relief Panel, a study of motion translated through monumental sculptural depth."
+      },
+
+      {
+        src: sculpture5,
+        caption:
+          "Plate V — Desert Narrative Wall, handcrafted relief storytelling inspired by landscape and memory."
+      },
+
+      {
+        src: sculpture6,
+        caption:
+          "Plate VI — Divine Feminine Relief, balancing sacred serenity with architectural sculptural rhythm."
+      },
+
+      {
+        src: sculpture7,
+        caption:
+          "Plate VII — Temple Axis Composition, structured through layered sacred geometry and meditative symmetry."
+      },
+
+      {
+        src: sculpture8,
+        caption:
+          "Plate VIII — White Marble Ganesha, a collectible devotional murti carved in refined spiritual minimalism."
+      },
+
+      {
+        src: sculpture9,
+        caption:
+          "Plate IX — Royal Ganesha Study, combining ceremonial ornamentation with luxury marble craftsmanship."
+      },
+
+      {
+        src: sculpture10,
+        caption:
+          "Plate X — Durga on Lion, a sacred sculptural tableau embodying power, protection, and divine energy."
+      },
+
+      {
+        src: sculpture11,
+        caption:
+          "Plate XI — Ram Darbar Ensemble, presented as a museum-grade devotional composition in carved marble."
+      },
+
+      {
+        src: sculpture12,
+        caption:
+          "Plate XII — Lotus Throne Vishnu, a serene collectible sculpture balancing divinity and sculptural elegance."
+      }
+    ]
   }
 ];
 
