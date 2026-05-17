@@ -57,6 +57,11 @@ import furniture_5 from './furniture_5.jpeg';
 import furniture_6 from './furniture_6.jpeg';
 import furniture_7 from './furniture_7.jpeg';
 import furniture_8 from './furniture_8.jpeg';
+import yantra_1 from './yantra_1.jpeg';
+import yantra_2 from './yantra_2.jpeg';
+import yantra_3 from './yantra_3.jpeg';
+import yantra_4 from './yantra_4.jpeg';
+import yantra_5 from './yantra_5.jpeg';
 import logo from './MK Creation.png'
 
 export {
@@ -119,5 +124,10 @@ export {
     furniture_6,
     furniture_7,
     furniture_8,
+    yantra_1,
+    yantra_2,
+    yantra_3,
+    yantra_4,
+    yantra_5,
     logo
 }

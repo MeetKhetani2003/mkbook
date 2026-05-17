@@ -1,5 +1,5 @@
 
-import { work1, work2, work3, work4, work5, work6, pebble_1, pebble_2, pebble_3, pebble_4, pebble_5, sculpture1, sculpture2, sculpture3, sculpture4, sculpture5, sculpture6, sculpture7, sculpture8, sculpture9, sculpture10, sculpture11, sculpture12, engraving_1, engraving_2, engraving_3, engraving_4, engraving_5, engraving_6, engraving_7, engraving_8, engraving_9, engraving_10, engraving_11, engraving_12, engraving_13, engraving_14, engraving_15, gift_1, gift_2, gift_3, gift_4, gift_5, gift_6, gift_7, gift_8, gift_9, gift_10, gift_11, gift_12, gift_13, furniture_1, furniture_2, furniture_3, furniture_4, furniture_5, furniture_6, furniture_7, furniture_8 } from "../assets/assets.js";
+import { work1, work2, work3, work4, work5, work6, pebble_1, pebble_2, pebble_3, pebble_4, pebble_5, sculpture1, sculpture2, sculpture3, sculpture4, sculpture5, sculpture6, sculpture7, sculpture8, sculpture9, sculpture10, sculpture11, sculpture12, engraving_1, engraving_2, engraving_3, engraving_4, engraving_5, engraving_6, engraving_7, engraving_8, engraving_9, engraving_10, engraving_11, engraving_12, engraving_13, engraving_14, engraving_15, gift_1, gift_2, gift_3, gift_4, gift_5, gift_6, gift_7, gift_8, gift_9, gift_10, gift_11, gift_12, gift_13, furniture_1, furniture_2, furniture_3, furniture_4, furniture_5, furniture_6, furniture_7, furniture_8, yantra_1, yantra_2, yantra_3, yantra_4, yantra_5 } from "../assets/assets.js";
 export type Chapter = {
   number: string;
   category: string;
@@ -687,6 +687,97 @@ export const chapters: Chapter[] = [
         src: furniture_8,
         caption:
           "Plate VIII — Contemporary Marble Side Table Ensemble, balancing monolithic geometry with refined material elegance."
+      }
+    ]
+  },
+  {
+    number: "VII",
+
+    category: "Divine Sri Yantra Collection",
+
+    title: "Sacred Geometry & Spiritual Architecture",
+
+    subtitle:
+      "Handcrafted Sri Yantra installations, sacred geometric reliefs & collectible spiritual objects",
+
+    year: "MMXXVI",
+
+    location: "Luxury Spiritual Residences · Meditation Spaces · Temple Interiors",
+
+    architect: "MK Creations Atelier",
+
+    intro:
+      "Sacred Geometry & Spiritual Architecture explores the timeless visual language of the Sri Yantra through handcrafted marble reliefs, sacred installations, and collectible spiritual artworks conceived for contemporary luxury interiors.",
+
+    body: [
+      "Rooted in ancient sacred geometry and spiritual symbolism, each Sri Yantra work is executed through refined carving techniques, layered relief detailing, and architectural composition designed to elevate meditation spaces, luxury residences, hospitality sanctuaries, and devotional environments.",
+
+      "Rather than functioning merely as decorative symbolism, the collection transforms sacred geometry into collectible architectural objects — balancing spiritual calmness with sculptural material richness and editorial spatial styling.",
+
+      "The chapter celebrates precision craftsmanship, symmetry, layered geometry, and the meditative silence of handcrafted spiritual artistry through premium marble and carved sacred compositions."
+    ],
+
+    specs: [
+      {
+        label: "Medium",
+        value: "White Marble · Sacred Relief Carving · Architectural Stone"
+      },
+
+      {
+        label: "Techniques",
+        value: "Hand Carving · Layered Relief · Sacred Geometric Engraving"
+      },
+
+      {
+        label: "Applications",
+        value: "Meditation Rooms · Temple Interiors · Luxury Spiritual Spaces"
+      },
+
+      {
+        label: "Design Language",
+        value: "Sacred Geometry · Spiritual Minimalism · Architectural Calmness"
+      },
+
+      {
+        label: "Collection",
+        value: "Collectible Sri Yantra Installations"
+      },
+
+      {
+        label: "Craft Origin",
+        value: "MK Creations Atelier"
+      }
+    ],
+
+    images: [
+      {
+        src: yantra_1,
+        caption:
+          "Plate I — Sacred Marble Sri Yantra Relief, handcrafted through layered sacred geometry and refined architectural carving."
+      },
+
+      {
+        src: yantra_2,
+        caption:
+          "Plate II — Sri Yantra Macro Geometry Study, exploring carved depth, sacred symmetry, and meditative stone detailing."
+      },
+
+      {
+        src: yantra_3,
+        caption:
+          "Plate III — Wooden Sri Yantra Sculpture, balancing artisan wood craftsmanship with timeless spiritual geometry."
+      },
+
+      {
+        src: yantra_4,
+        caption:
+          "Plate IV — Divine Sri Yantra Installation, conceived as a luxury spiritual architectural centerpiece."
+      },
+
+      {
+        src: yantra_5,
+        caption:
+          "Plate V — Collectible Sacred Geometry Object, integrating devotional symbolism with contemporary editorial styling."
       }
     ]
   }
