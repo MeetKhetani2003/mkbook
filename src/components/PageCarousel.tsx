@@ -16,6 +16,7 @@ export default function PageCarousel({
   plateLabel,
   onInteractionStart,
   onInteractionEnd,
+  isNear = true,
 }: {
   images: ImageItem[];
   onAdvanceBook: () => void;
@@ -23,6 +24,7 @@ export default function PageCarousel({
   plateLabel: string;
   onInteractionStart?: () => void;
   onInteractionEnd?: () => void;
+  isNear?: boolean;
 }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const swiperRef = useRef<SwiperClass | null>(null);
@@ -118,8 +120,8 @@ export default function PageCarousel({
         className="lux-swiper"
       >
         {images.map((img, i) => {
-          // Lazy render only active and adjacent slides' image assets
-          const isNearActive = Math.abs(i - activeIdx) <= 1;
+          // Lazy render only active and adjacent slides' image assets if the chapter is nearby
+          const isNearActive = isNear && Math.abs(i - activeIdx) <= 1;
 
           return (
             <SwiperSlide key={i}>

@@ -86,9 +86,9 @@ export default function App() {
     const dx = endX - touchStartX.current;
     const dy = endY - touchStartY.current;
 
-    // Horizontal swipe threshold: delta X > 50px, horizontal movement is dominant
-    if (Math.abs(dx) > 50 && Math.abs(dy) < 60) {
-      if (dx < -50) {
+    // Horizontal swipe threshold: delta X > 40px, and horizontal movement is dominant
+    if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) {
+      if (dx < 0) {
         bookRef.current?.next();
       } else {
         bookRef.current?.prev();

@@ -166,7 +166,7 @@ const FlipBook = forwardRef<FlipBookHandle, Props>(({ width, height, isMobile, o
       {/* === CHAPTERS === */}
       {chapters.map((ch, i) => {
         // Left page index is 2*i + 2, Right page index is 2*i + 3.
-        // We only render PageCarousel if it is nearby the current page spread (+/- 3 pages)
+        // We track if this chapter is nearby to lazy-load its images
         const leftPageIndex = 2 * i + 2;
         const rightPageIndex = 2 * i + 3;
         const isChapterNearby = Math.abs(current - leftPageIndex) <= 3 || Math.abs(current - rightPageIndex) <= 3;
@@ -176,23 +176,15 @@ const FlipBook = forwardRef<FlipBookHandle, Props>(({ width, height, isMobile, o
             <EditorialPage chapter={ch} index={i} />
           </Page>,
           <Page key={`r-${i}`} className="page-right">
-            {isChapterNearby ? (
-              <PageCarousel
-                images={ch.images}
-                onAdvanceBook={advance}
-                onPrevBook={retreat}
-                plateLabel={`Folio ${ch.number} · Plates`}
-                onInteractionStart={() => setIsSwipeEnabled(false)}
-                onInteractionEnd={() => setIsSwipeEnabled(true)}
-              />
-            ) : (
-              <div className="w-full h-full flex flex-col items-center justify-center p-6 text-center bg-[#fcfaf7]">
-                <p className="font-sans-lux text-[10px] text-[#8a6f48]/50 tracking-[0.2em] mb-2">
-                  Atelier · Folio {ch.number}
-                </p>
-                <div className="w-12 h-px bg-[#8a6f48]/20 shimmer-text" />
-              </div>
-            )}
+            <PageCarousel
+              images={ch.images}
+              onAdvanceBook={advance}
+              onPrevBook={retreat}
+              plateLabel={`Folio ${ch.number} · Plates`}
+              onInteractionStart={() => setIsSwipeEnabled(false)}
+              onInteractionEnd={() => setIsSwipeEnabled(true)}
+              isNear={isChapterNearby}
+            />
           </Page>
         ];
       })}
