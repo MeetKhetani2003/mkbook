@@ -1,5 +1,5 @@
 
-import { work1, work2, work3, work4, work5, work6, pebble_1, pebble_2, pebble_3, pebble_4, pebble_5, sculpture1, sculpture2, sculpture3, sculpture4, sculpture5, sculpture6, sculpture7, sculpture8, sculpture9, sculpture10, sculpture11, sculpture12, engraving_1, engraving_2, engraving_3, engraving_4, engraving_5, engraving_6, engraving_7, engraving_8, engraving_9, engraving_10, engraving_11, engraving_12, engraving_13, engraving_14, engraving_15, gift_1, gift_2, gift_3, gift_4, gift_5, gift_6, gift_7, gift_8, gift_9, gift_10, gift_11, gift_12, gift_13, furniture_1, furniture_2, furniture_3, furniture_4, furniture_5, furniture_6, furniture_7, furniture_8, yantra_1, yantra_2, yantra_3, yantra_4, yantra_5 } from "../assets/assets.js";
+import { work1, work2, work3, work4, work5, work6, pebble_1, pebble_2, pebble_3, pebble_4, pebble_5, sculpture1, sculpture2, sculpture3, sculpture4, sculpture5, sculpture6, sculpture7, sculpture8, sculpture9, sculpture10, sculpture11, sculpture12, engraving_1, engraving_2, engraving_3, engraving_4, engraving_5, engraving_6, engraving_7, engraving_8, engraving_9, engraving_10, engraving_11, engraving_12, engraving_13, engraving_14, engraving_15, gift_1, gift_2, gift_3, gift_4, gift_5, gift_6, gift_7, gift_8, gift_9, gift_10, gift_11, gift_12, gift_13, furniture_1, furniture_2, furniture_3, furniture_4, furniture_5, furniture_6, furniture_7, furniture_8, yantra_1, yantra_2, yantra_3, yantra_4, yantra_5, fluting_1, fluting_2, fluting_3, fluting_4 } from "../assets/assets.js";
 export type Chapter = {
   number: string;
   category: string;
@@ -778,6 +778,97 @@ export const chapters: Chapter[] = [
         src: yantra_5,
         caption:
           "Plate V — Collectible Sacred Geometry Object, integrating devotional symbolism with contemporary editorial styling."
+      }
+    ]
+  },
+  {
+    number: "VIII",
+
+    category: "Architectural Fluting Collection",
+
+    title: "Sculpted Surface Geometry",
+
+    subtitle:
+      "Luxury fluted marble walls, sculptural textured surfaces & contemporary architectural detailing",
+
+    year: "MMXXVI",
+
+    location:
+      "Luxury Residences · Hospitality Interiors · Spa Spaces · Contemporary Architectural Projects",
+
+    architect: "MK Creations Atelier",
+
+    intro:
+      "Sculpted Surface Geometry explores fluting as an architectural language of rhythm, shadow, texture, and dimensional elegance through handcrafted marble and contemporary surface craftsmanship.",
+
+    body: [
+      "The collection transforms static walls into sculptural architectural compositions using precision fluting, carved wave textures, layered stone geometry, and refined lighting integration. Each installation creates dynamic depth through light, shadow, and material interaction.",
+
+      "From luxury spa environments and statement bathrooms to hospitality feature walls and contemporary residential interiors, the surfaces are conceived as immersive architectural experiences rather than decorative cladding.",
+
+      "Executed through premium stone craftsmanship and modern fabrication techniques, the chapter celebrates tactile geometry, sculptural minimalism, and the timeless richness of architectural material expression."
+    ],
+
+    specs: [
+      {
+        label: "Medium",
+        value:
+          "Natural Marble · Fluted Stone Panels · Architectural Surface Systems"
+      },
+
+      {
+        label: "Techniques",
+        value:
+          "Linear Fluting · Sculptural Relief Carving · CNC Surface Texturing"
+      },
+
+      {
+        label: "Applications",
+        value:
+          "Bathrooms · Feature Walls · Hospitality Interiors · Luxury Residences"
+      },
+
+      {
+        label: "Design Language",
+        value:
+          "Architectural Minimalism · Surface Rhythm · Sculptural Geometry"
+      },
+
+      {
+        label: "Material Identity",
+        value:
+          "Textured Marble · Layered Stone Surfaces · Dimensional Finishes"
+      },
+
+      {
+        label: "Craft Origin",
+        value: "MK Creations Atelier"
+      }
+    ],
+
+    images: [
+      {
+        src: fluting_1,
+        caption:
+          "Plate I — Fluted Marble Shower Architecture integrating sculptural curvature, concealed lighting, and minimalist luxury detailing."
+      },
+
+      {
+        src: fluting_2,
+        caption:
+          "Plate II — Wave-Carved Black Marble Surface crafted through dimensional fluting and luxury hospitality-inspired geometry."
+      },
+
+      {
+        src: fluting_3,
+        caption:
+          "Plate III — Sculptural Bedroom Feature Wall exploring rhythmic fluted textures and cinematic shadow depth."
+      },
+
+      {
+        src: fluting_4,
+        caption:
+          "Plate IV — Contemporary Fluting Installation combining flowing linear geometry with architectural surface composition."
       }
     ]
   }

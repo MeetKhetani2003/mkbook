@@ -9,18 +9,18 @@ import pebble_2 from './pebble_2.jpeg'
 import pebble_3 from './pebble_3.jpeg'
 import pebble_4 from './pebble_4.jpeg'
 import pebble_5 from './pebble_5.jpeg'
-import sculpture1 from './sculpture1.jpg';
-import sculpture2 from './sculpture2.jpg';
-import sculpture3 from './sculpture3.jpg';
-import sculpture4 from './sculpture4.jpg';
-import sculpture5 from './sculpture5.jpg';
-import sculpture6 from './sculpture6.jpg';
-import sculpture7 from './sculpture7.jpg';
-import sculpture8 from './sculpture8.jpg';
-import sculpture9 from './sculpture9.jpg';
-import sculpture10 from './sculpture10.jpg';
-import sculpture11 from './sculpture11.jpg';
-import sculpture12 from './sculpture12.jpg';
+import sculpture1 from './sculpture-1.jpeg';
+import sculpture2 from './sculpture-2.jpeg';
+import sculpture3 from './sculpture-3.jpeg';
+import sculpture4 from './sculpture-4.jpeg';
+import sculpture5 from './sculpture-5.jpeg';
+import sculpture6 from './sculpture-6.jpeg';
+import sculpture7 from './sculpture-7.jpeg';
+import sculpture8 from './sculpture-8.jpeg';
+import sculpture9 from './sculpture-9.jpeg';
+import sculpture10 from './sculpture-10.jpeg';
+import sculpture11 from './sculpture-11.jpeg';
+import sculpture12 from './sculpture-12.jpeg';
 import engraving_1 from './engraving_1.jpeg';
 import engraving_2 from './engraving_2.jpeg';
 import engraving_3 from './engraving_3.jpeg';
@@ -62,6 +62,10 @@ import yantra_2 from './yantra_2.jpeg';
 import yantra_3 from './yantra_3.jpeg';
 import yantra_4 from './yantra_4.jpeg';
 import yantra_5 from './yantra_5.jpeg';
+import fluting_1 from './fluting_1.jpeg';
+import fluting_2 from './fluting_2.jpeg';
+import fluting_3 from './fluting_3.jpeg';
+import fluting_4 from './fluting_4.jpeg';
 import logo from './MK Creation.png'
 
 export {
@@ -129,5 +133,9 @@ export {
     yantra_3,
     yantra_4,
     yantra_5,
+    fluting_1,
+    fluting_2,
+    fluting_3,
+    fluting_4,
     logo
 }
