@@ -21,6 +21,21 @@ import sculpture9 from './sculpture9.jpg';
 import sculpture10 from './sculpture10.jpg';
 import sculpture11 from './sculpture11.jpg';
 import sculpture12 from './sculpture12.jpg';
+import engraving_1 from './engraving_1.jpeg';
+import engraving_2 from './engraving_2.jpeg';
+import engraving_3 from './engraving_3.jpeg';
+import engraving_4 from './engraving_4.jpeg';
+import engraving_5 from './engraving_5.jpeg';
+import engraving_6 from './engraving_6.jpeg';
+import engraving_7 from './engraving_7.jpeg';
+import engraving_8 from './engraving_8.jpeg';
+import engraving_9 from './engraving_9.jpeg';
+import engraving_10 from './engraving_10.jpeg';
+import engraving_11 from './engraving_11.jpeg';
+import engraving_12 from './engraving_12.jpeg';
+import engraving_13 from './engraving_13.jpeg';
+import engraving_14 from './engraving_14.jpeg';
+import engraving_15 from './engraving_15.jpeg';
 import logo from './MK Creation.png'
 
 export {
@@ -47,5 +62,20 @@ export {
     sculpture10,
     sculpture11,
     sculpture12,
+    engraving_1,
+    engraving_2,
+    engraving_3,
+    engraving_4,
+    engraving_5,
+    engraving_6,
+    engraving_7,
+    engraving_8,
+    engraving_9,
+    engraving_10,
+    engraving_11,
+    engraving_12,
+    engraving_13,
+    engraving_14,
+    engraving_15,
     logo
 }

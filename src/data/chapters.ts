@@ -1,5 +1,5 @@
 
-import { work1, work2, work3, work4, work5, work6, pebble_1, pebble_2, pebble_3, pebble_4, pebble_5, sculpture1, sculpture2, sculpture3, sculpture4, sculpture5, sculpture6, sculpture7, sculpture8, sculpture9, sculpture10, sculpture11, sculpture12 } from "../assets/assets.js";
+import { work1, work2, work3, work4, work5, work6, pebble_1, pebble_2, pebble_3, pebble_4, pebble_5, sculpture1, sculpture2, sculpture3, sculpture4, sculpture5, sculpture6, sculpture7, sculpture8, sculpture9, sculpture10, sculpture11, sculpture12, engraving_1, engraving_2, engraving_3, engraving_4, engraving_5, engraving_6, engraving_7, engraving_8, engraving_9, engraving_10, engraving_11, engraving_12, engraving_13, engraving_14, engraving_15 } from "../assets/assets.js";
 export type Chapter = {
   number: string;
   category: string;
@@ -290,7 +290,158 @@ export const chapters: Chapter[] = [
           "Plate XII — Lotus Throne Vishnu, a serene collectible sculpture balancing divinity and sculptural elegance."
       }
     ]
-  }
+  },
+  {
+    number: "IV",
+
+    category: "Architectural Engraving & Sacred Surface Craft",
+
+    title: "The Engraved Sanctum",
+
+    subtitle:
+      "Sacred inscriptions, geometric carvings & contemporary spiritual surfaces",
+
+    year: "MMXXVI",
+
+    location: "Temple · Residential · Ceremonial Architecture",
+
+    architect: "MK Creations Atelier",
+
+    intro:
+      "The Engraved Sanctum explores the refinement of sacred carving through architectural surfaces, ceremonial inscriptions, geometric symbolism, and devotional spatial detailing.",
+
+    body: [
+      "Rather than functioning as decorative graphics alone, each engraved composition is conceived as an architectural intervention — integrating spiritual symbolism directly into stone, marble, tile, and handcrafted surface systems.",
+
+      "The collection balances precision CNC engraving, handcrafted finishing, and sacred geometry with a restrained contemporary aesthetic suited for luxury residences, meditation spaces, temple interiors, and collectible spiritual architecture.",
+
+      "From Sanskrit inscriptions and yantra carvings to lotus compositions, threshold markers, memorial plaques, and meditative floor engravings, every work transforms material into symbolic spatial experience."
+    ],
+
+    specs: [
+      {
+        label: "Medium",
+        value: "Marble · Granite · Stone · Architectural Tile"
+      },
+
+      {
+        label: "Techniques",
+        value: "CNC Engraving · Relief Carving · Gold Inlay"
+      },
+
+      {
+        label: "Applications",
+        value: "Temple Interiors · Luxury Residences · Sacred Spaces"
+      },
+
+      {
+        label: "Design Language",
+        value: "Sacred Geometry · Minimal Spiritualism · Architectural Craft"
+      },
+
+      {
+        label: "Specialization",
+        value: "Custom Devotional Surface Design"
+      },
+
+      {
+        label: "Craft Origin",
+        value: "MK Creations Atelier"
+      }
+    ],
+
+    images: [
+      {
+        src: engraving_1,
+        caption:
+          "Plate I — Sanskrit Stone Inscription engraved through minimal sacred architectural composition."
+      },
+
+      {
+        src: engraving_2,
+        caption:
+          "Plate II — Lotus Emblem Tile exploring symbolic floral geometry through carved stone surfaces."
+      },
+
+      {
+        src: engraving_3,
+        caption:
+          "Plate III — Sacred Om Composition executed through handcrafted curvilinear engraving."
+      },
+
+      {
+        src: engraving_4,
+        caption:
+          "Plate IV — Sri Yantra Relief Panel balancing geometric precision with sculptural depth."
+      },
+
+      {
+        src: engraving_5,
+        caption:
+          "Plate V — Devotional Wardrobe Elevation integrating sacred symbolism into luxury interior architecture."
+      },
+
+      {
+        src: engraving_6,
+        caption:
+          "Plate VI — Geometric Surface Study exploring rhythm, depth, and contemporary engraving minimalism."
+      },
+
+      {
+        src: engraving_7,
+        caption:
+          "Plate VII — Yantra Meditation Wall designed for serene spiritual interior environments."
+      },
+
+      {
+        src: engraving_8,
+        caption:
+          "Plate VIII — Monolithic Om Marker carved in pure white marble with restrained sculptural elegance."
+      },
+
+      {
+        src: engraving_9,
+        caption:
+          "Plate IX — Ceremonial Threshold Panels combining sacred symbols with architectural material richness."
+      },
+
+      {
+        src: engraving_10,
+        caption:
+          "Plate X — Floral Sacred Partition integrating perforated carving and symbolic devotional geometry."
+      },
+
+      {
+        src: engraving_11,
+        caption:
+          "Plate XI — Marble Memorial Bust presented through formal institutional sculptural language."
+      },
+
+      {
+        src: engraving_12,
+        caption:
+          "Plate XII — Temple Dedication Plaque executed in polished black granite with gold engraved typography."
+      },
+
+      {
+        src: engraving_13,
+        caption:
+          "Plate XIII — Minimal Floor Engraving introducing sacred geometry into contemporary residential interiors."
+      },
+
+      {
+        src: engraving_14,
+        caption:
+          "Plate XIV — Gayatri Mantra Installation framed through luxury temple architecture and ceremonial lighting."
+      },
+
+      {
+        src: engraving_15,
+        caption:
+          "Plate XV — Om Lotus Relief Panel balancing minimal carving with meditative spatial symmetry."
+      }
+    ]
+  };
 ];
 
 // For backward compatibility or other uses if any
