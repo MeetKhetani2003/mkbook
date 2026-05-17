@@ -1,5 +1,5 @@
 
-import { work1, work2, work3, work4, work5, work6, pebble_1, pebble_2, pebble_3, pebble_4, pebble_5, sculpture1, sculpture2, sculpture3, sculpture4, sculpture5, sculpture6, sculpture7, sculpture8, sculpture9, sculpture10, sculpture11, sculpture12, engraving_1, engraving_2, engraving_3, engraving_4, engraving_5, engraving_6, engraving_7, engraving_8, engraving_9, engraving_10, engraving_11, engraving_12, engraving_13, engraving_14, engraving_15, gift_1, gift_2, gift_3, gift_4, gift_5, gift_6, gift_7, gift_8, gift_9, gift_10, gift_11, gift_12, gift_13 } from "../assets/assets.js";
+import { work1, work2, work3, work4, work5, work6, pebble_1, pebble_2, pebble_3, pebble_4, pebble_5, sculpture1, sculpture2, sculpture3, sculpture4, sculpture5, sculpture6, sculpture7, sculpture8, sculpture9, sculpture10, sculpture11, sculpture12, engraving_1, engraving_2, engraving_3, engraving_4, engraving_5, engraving_6, engraving_7, engraving_8, engraving_9, engraving_10, engraving_11, engraving_12, engraving_13, engraving_14, engraving_15, gift_1, gift_2, gift_3, gift_4, gift_5, gift_6, gift_7, gift_8, gift_9, gift_10, gift_11, gift_12, gift_13, furniture_1, furniture_2, furniture_3, furniture_4, furniture_5, furniture_6, furniture_7, furniture_8 } from "../assets/assets.js";
 export type Chapter = {
   number: string;
   category: string;
@@ -580,7 +580,116 @@ export const chapters: Chapter[] = [
           "Plate XIII — Minimal Marble Goblet Artifact, exploring quiet sculptural geometry through handcrafted marble minimalism."
       }
     ]
-  };
+  },
+  {
+    number: "VI",
+
+    category: "Marble Furniture Collection",
+
+    title: "Sculpted Living Forms",
+
+    subtitle:
+      "Architectural marble furniture crafted as collectible sculptural objects",
+
+    year: "MMXXVI",
+
+    location: "Luxury Residential · Hospitality · Gallery Interiors",
+
+    architect: "MK Creations Atelier",
+
+    intro:
+      "Sculpted Living Forms explores the intersection of architecture, furniture, and stone artistry through handcrafted marble furniture pieces conceived as collectible sculptural forms.",
+
+    body: [
+      "Each object balances monolithic material presence with refined geometry, transforming furniture into architectural statements. From sculptural console tables and carved reception counters to pedestal side tables and collectible decor installations, the collection celebrates stone as both structure and art.",
+
+      "The pieces preserve the authenticity of handcrafted marble craftsmanship while embracing contemporary editorial styling, luxury hospitality aesthetics, and gallery-inspired spatial composition.",
+
+      "Designed for luxury residences, curated interiors, hospitality environments, and collectible design spaces, the chapter emphasizes tactile materiality, sculptural proportion, and timeless stone elegance."
+    ],
+
+    specs: [
+      {
+        label: "Medium",
+        value: "Natural Marble · Handcrafted Stone · Sculptural Furniture"
+      },
+
+      {
+        label: "Techniques",
+        value: "Stone Carving · Marble Turning · Monolithic Fabrication"
+      },
+
+      {
+        label: "Applications",
+        value: "Luxury Residences · Hospitality · Gallery Interiors"
+      },
+
+      {
+        label: "Design Language",
+        value: "Architectural Minimalism · Sculptural Luxury"
+      },
+
+      {
+        label: "Collection",
+        value: "Collectible Marble Furniture Objects"
+      },
+
+      {
+        label: "Craft Origin",
+        value: "MK Creations Atelier"
+      }
+    ],
+
+    images: [
+      {
+        src: furniture_1,
+        caption:
+          "Plate I — Sculptural Marble Console Table, balancing geometric leg compositions with collectible architectural styling."
+      },
+
+      {
+        src: furniture_2,
+        caption:
+          "Plate II — Monolithic Black Marble Side Table, emphasizing sculptural silhouette and polished stone minimalism."
+      },
+
+      {
+        src: furniture_3,
+        caption:
+          "Plate III — Raw Stone Reception Counter, preserving natural rock textures within contemporary hospitality furniture design."
+      },
+
+      {
+        src: furniture_4,
+        caption:
+          "Plate IV — Architectural Marble Console Installation, integrating stacked geometric stone forms with collectible decor styling."
+      },
+
+      {
+        src: furniture_5,
+        caption:
+          "Plate V — Sculptural Marble Handbag Objects, transforming luxury fashion iconography into collectible stone artifacts."
+      },
+
+      {
+        src: furniture_6,
+        caption:
+          "Plate VI — Luxury Marble Handbag Sculpture, handcrafted as a collectible editorial decor statement."
+      },
+
+      {
+        src: furniture_7,
+        caption:
+          "Plate VII — Pedestal Marble Table Collection, exploring sculptural proportions through contemporary collectible furniture forms."
+      },
+
+      {
+        src: furniture_8,
+        caption:
+          "Plate VIII — Contemporary Marble Side Table Ensemble, balancing monolithic geometry with refined material elegance."
+      }
+    ]
+  }
 ];
 
 // For backward compatibility or other uses if any

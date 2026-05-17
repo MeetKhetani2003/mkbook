@@ -49,6 +49,14 @@ import gift_10 from './gift_10.jpeg';
 import gift_11 from './gift_11.jpeg';
 import gift_12 from './gift_12.jpeg';
 import gift_13 from './gift_13.jpeg';
+import furniture_1 from './furniture_1.jpeg';
+import furniture_2 from './furniture_2.jpeg';
+import furniture_3 from './furniture_3.jpeg';
+import furniture_4 from './furniture_4.jpeg';
+import furniture_5 from './furniture_5.jpeg';
+import furniture_6 from './furniture_6.jpeg';
+import furniture_7 from './furniture_7.jpeg';
+import furniture_8 from './furniture_8.jpeg';
 import logo from './MK Creation.png'
 
 export {
@@ -103,5 +111,13 @@ export {
     gift_11,
     gift_12,
     gift_13,
+    furniture_1,
+    furniture_2,
+    furniture_3,
+    furniture_4,
+    furniture_5,
+    furniture_6,
+    furniture_7,
+    furniture_8,
     logo
 }
