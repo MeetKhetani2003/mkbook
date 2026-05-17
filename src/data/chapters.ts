@@ -441,7 +441,7 @@ export const chapters: Chapter[] = [
           "Plate XV — Om Lotus Relief Panel balancing minimal carving with meditative spatial symmetry."
       }
     ]
-  };
+  }
 ];
 
 // For backward compatibility or other uses if any
