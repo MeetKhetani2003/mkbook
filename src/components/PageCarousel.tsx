@@ -141,7 +141,7 @@ export default function PageCarousel({
                   />
                 ) : (
                   <div className="absolute inset-0 w-full h-full flex items-center justify-center bg-[#f5f0e6]/30 font-sans-lux text-[10px] text-[#8a6f48]/40 shimmer-text">
-                    Atelier · Folio
+                    Art of Surfaces · Folio
                   </div>
                 )}
 

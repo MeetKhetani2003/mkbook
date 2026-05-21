@@ -258,7 +258,7 @@ export default function App() {
         <div className="pointer-events-auto">
           <img src={logo} alt="MK Creations" className="h-10 sm:h-14 w-auto object-contain brightness-110" />
           <div className="font-sans-lux text-[7px] sm:text-[8px] text-[#8a6f48] mt-1 tracking-[0.2em]">
-            ATELIER · FOLIO IX · MMXXVI
+            Art of Stones MK - 2026
           </div>
         </div>
         <div className="pointer-events-auto text-right">
@@ -369,7 +369,7 @@ export default function App() {
 
         <div className="pointer-events-auto hidden sm:block text-right">
           <p className="font-sans-lux text-[9px] text-[#2c2926]/50">
-            RAJKOT · MILANO · GLOBAL
+            RAJKOT · GUJARAT
           </p>
         </div>
       </div>

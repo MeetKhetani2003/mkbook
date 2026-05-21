@@ -2,11 +2,22 @@ import jsPDF from "jspdf";
 import { logo } from "../assets/assets";
 import { chapters, Chapter } from "../data/chapters";
 
-const loadImage = (src: string): Promise<HTMLImageElement> => {
+const getImageData = async (src: string, format: string = 'image/jpeg'): Promise<{dataUrl: string, ratio: number}> => {
   return new Promise((resolve, reject) => {
     const img = new Image();
     img.crossOrigin = "anonymous";
-    img.onload = () => resolve(img);
+    img.onload = () => {
+      const canvas = document.createElement('canvas');
+      canvas.width = img.width;
+      canvas.height = img.height;
+      const ctx = canvas.getContext('2d');
+      if (ctx) {
+        ctx.drawImage(img, 0, 0);
+        resolve({ dataUrl: canvas.toDataURL(format, 0.9), ratio: img.height / img.width });
+      } else {
+        reject(new Error("Failed to get canvas context"));
+      }
+    };
     img.onerror = reject;
     img.src = src;
   });
@@ -25,22 +36,25 @@ export const generateBrochurePDF = async () => {
   const contentWidth = pageWidth - margin * 2;
 
   // Load logo once
-  let logoImg: HTMLImageElement | null = null;
+  let logoDataUrl: string | null = null;
+  let logoRatio = 1;
   try {
-    logoImg = await loadImage(logo);
+    const logoObj = await getImageData(logo, 'image/png');
+    logoDataUrl = logoObj.dataUrl;
+    logoRatio = logoObj.ratio;
   } catch (e) {
     console.error("Failed to load logo for PDF", e);
   }
 
   const addBranding = () => {
-    if (logoImg) {
+    if (logoDataUrl) {
       const logoW = 20;
-      const logoH = (logoImg.height / logoImg.width) * logoW;
-      doc.addImage(logoImg, "PNG", margin, 10, logoW, logoH);
+      const logoH = logoRatio * logoW;
+      doc.addImage(logoDataUrl, "PNG", margin, 10, logoW, logoH);
     }
     doc.setFontSize(8);
     doc.setTextColor(181, 154, 109); // Gold-ish
-    doc.text("MK CREATIONS · ATELIER · MMXXVI", pageWidth - margin, 15, { align: "right" });
+    doc.text("MK CREATIONS · ART OF SURFACES · MMXXVI", pageWidth - margin, 15, { align: "right" });
     doc.setDrawColor(181, 154, 109);
     doc.setLineWidth(0.1);
     doc.line(margin, 20, pageWidth - margin, 20);
@@ -50,7 +64,7 @@ export const generateBrochurePDF = async () => {
     doc.setFontSize(8);
     doc.setTextColor(150, 150, 150);
     doc.text(`Page ${pageNumber}`, pageWidth / 2, pageHeight - 10, { align: "center" });
-    doc.text("Rajkot · Milano · Global", pageWidth - margin, pageHeight - 10, { align: "right" });
+    doc.text("Rajkot · Gujarat", pageWidth - margin, pageHeight - 10, { align: "right" });
   };
 
   let currentPage = 1;
@@ -65,7 +79,7 @@ export const generateBrochurePDF = async () => {
   doc.setFont("times", "italic");
   doc.setFontSize(14);
   doc.setTextColor(138, 111, 72); // Bronze
-  doc.text("An Architectural Atelier", pageWidth / 2, pageHeight / 2 - 10, { align: "center" });
+  doc.text("An Architectural Art of Surfaces", pageWidth / 2, pageHeight / 2 - 10, { align: "center" });
   
   doc.setFont("times", "normal");
   doc.setFontSize(10);
@@ -86,7 +100,7 @@ export const generateBrochurePDF = async () => {
   doc.setFont("times", "italic");
   doc.setFontSize(14);
   doc.setTextColor(100, 100, 100);
-  const introText = "MK Creations is an architectural atelier dedicated to the art of the surface. We believe that the ground we walk on and the walls that surround us are more than functional boundaries — they are canvases for architectural expression.";
+  const introText = "MK Creations is an architectural art of surfaces dedicated to the art of the surface. We believe that the ground we walk on and the walls that surround us are more than functional boundaries — they are canvases for architectural expression.";
   const introLines = doc.splitTextToSize(introText, contentWidth);
   doc.text(introLines, margin, 60);
   
@@ -159,43 +173,47 @@ export const generateBrochurePDF = async () => {
     
     addPageFooter(currentPage++);
     
-    // Chapter Image Pages
-    for (const imgData of chapter.images) {
+    // Chapter Image Pages (Grid Layout)
+    const chunkSize = 4;
+    for (let i = 0; i < chapter.images.length; i += chunkSize) {
       doc.addPage();
       addBranding();
       
-      try {
-        const img = await loadImage(imgData.src);
-        const imgRatio = img.height / img.width;
+      const chunk = chapter.images.slice(i, i + chunkSize);
+      
+      // Grid configuration: 2 columns
+      const cols = 2;
+      const gap = 10;
+      const cellW = (contentWidth - gap) / 2;
+      const cellH = cellW * (4 / 3); // 3:4 ratio
+      
+      const totalRows = Math.ceil(chunk.length / cols);
+      const gridTotalHeight = totalRows * cellH + (totalRows - 1) * gap;
+      
+      const startY = 40 + (230 - gridTotalHeight) / 2;
+      
+      for (let j = 0; j < chunk.length; j++) {
+        const imgData = chunk[j];
+        const row = Math.floor(j / cols);
+        const col = j % cols;
         
-        // Fit image to page width (with margins)
-        const displayW = contentWidth;
-        const displayH = displayW * imgRatio;
+        const xPos = margin + col * (cellW + gap);
+        const yPos = startY + row * (cellH + gap);
         
-        // If it's too tall, fit to height
-        let finalW = displayW;
-        let finalH = displayH;
-        const maxH = pageHeight - 80; // leave space for header/footer
-        
-        if (finalH > maxH) {
-          finalH = maxH;
-          finalW = finalH / imgRatio;
+        try {
+          const imgObj = await getImageData(imgData.src, 'image/jpeg');
+          
+          doc.addImage(imgObj.dataUrl, "JPEG", xPos, yPos, cellW, cellH);
+          
+          doc.setFont("times", "italic");
+          doc.setFontSize(8);
+          doc.setTextColor(100, 100, 100);
+          const capLines = doc.splitTextToSize(imgData.caption, cellW);
+          doc.text(capLines, xPos + cellW / 2, yPos + cellH + 4, { align: "center" });
+          
+        } catch (e) {
+          console.error("Failed to add image to PDF", e);
         }
-        
-        const xPos = (pageWidth - finalW) / 2;
-        const yPos = 40 + (maxH - finalH) / 2;
-        
-        doc.addImage(img, "JPEG", xPos, yPos, finalW, finalH);
-        
-        // Caption
-        doc.setFont("times", "italic");
-        doc.setFontSize(9);
-        doc.setTextColor(100, 100, 100);
-        const capLines = doc.splitTextToSize(imgData.caption, contentWidth);
-        doc.text(capLines, pageWidth / 2, yPos + finalH + 10, { align: "center" });
-        
-      } catch (e) {
-        console.error("Failed to add image to PDF", e);
       }
       
       addPageFooter(currentPage++);
@@ -210,8 +228,8 @@ export const generateBrochurePDF = async () => {
   doc.text("MK CREATIONS", pageWidth / 2, pageHeight / 2 - 10, { align: "center" });
   doc.setFontSize(10);
   doc.setFont("times", "normal");
-  doc.text("Rajkot · Milano", pageWidth / 2, pageHeight / 2, { align: "center" });
-  doc.text("www.mkcreations.atelier", pageWidth / 2, pageHeight / 2 + 10, { align: "center" });
+  doc.text("Rajkot · Gujarat", pageWidth / 2, pageHeight / 2, { align: "center" });
+  doc.text("www.mkcreations.artofsurfaces", pageWidth / 2, pageHeight / 2 + 10, { align: "center" });
   
   addPageFooter(currentPage++);
 

@@ -17,7 +17,7 @@ export const chapters: Chapter[] = [
   {
     number: "I",
     category: "Inlay Surface Art",
-    title: "The Surface Atelier",
+    title: "The Surface Art of Surfaces",
     subtitle: "Stone inlays, Stone and wood Inlay , and Stone Brass Inlay",
     year: "2026",
     location: "Rajkot · Gujarat",
@@ -120,7 +120,7 @@ export const chapters: Chapter[] = [
       { label: "Medium", value: "Natural Pebbles · Stone · Art" },
       { label: "Techniques", value: "Hand Composition · Nature Balance" },
       { label: "Collection", value: "Pebbles Art" },
-      { label: "Atelier", value: "MK Creations" },
+      { label: "Art of Surfaces", value: "MK Creations" },
     ],
 
     images: [
@@ -172,14 +172,14 @@ export const chapters: Chapter[] = [
     architect: "MK Creations",
 
     intro:
-      "The Devotional Atelier explores the intersection of sacred symbolism, handcrafted sculpture, and architectural storytelling. Each work is conceived not merely as ornamentation, but as an emotional spiritual presence designed to inhabit refined contemporary interiors.",
+      "The Devotional Art of Surfaces explores the intersection of sacred symbolism, handcrafted sculpture, and architectural storytelling. Each work is conceived not merely as ornamentation, but as an emotional spiritual presence designed to inhabit refined contemporary interiors.",
 
     body: [
       "From intimate marble murtis and collectible devotional objects to monumental relief installations and ceremonial sculptural panels, the collection celebrates the timeless language of sacred craftsmanship through a contemporary editorial lens.",
 
       "Executed through hand carving, relief sculpting, marble finishing, and layered artisanal detailing, these works balance devotion with restraint — creating sculptural experiences suited for luxury residences, spiritual galleries, hospitality environments, and collectible interiors.",
 
-      "Rather than reproducing traditional iconography mechanically, the atelier approaches each composition as an architectural object: calm, balanced, materially rich, and emotionally resonant."
+      "Rather than reproducing traditional iconography mechanically, the art of surfaces approaches each composition as an architectural object: calm, balanced, materially rich, and emotionally resonant."
     ],
 
     specs: [
@@ -494,7 +494,7 @@ export const chapters: Chapter[] = [
 
       {
         label: "Craft Origin",
-        value: "MK Creations Atelier"
+        value: "MK Creations Art of Surfaces"
       }
     ],
 
@@ -592,7 +592,7 @@ export const chapters: Chapter[] = [
 
     location: "Luxury Residential · Hospitality · Gallery Interiors",
 
-    architect: "MK Creations Atelier",
+    architect: "MK Creations Art of Surfaces",
 
     intro:
       "Sculpted Living Forms explores the intersection of architecture, furniture, and stone artistry through handcrafted marble furniture pieces conceived as collectible sculptural forms.",

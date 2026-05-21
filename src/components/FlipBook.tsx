@@ -111,30 +111,21 @@ const FlipBook = forwardRef<FlipBookHandle, Props>(({ width, height, isMobile, o
       {/* === FRONT COVER === */}
       <HardPage className="book-cover">
         <div className="relative w-full h-full flex flex-col items-center justify-between p-6 sm:p-10 md:p-14 text-center">
-          <div className="font-sans-lux text-[10px] sm:text-xs text-[#c9a875]/80">
-            Established · MMXII · Atelier
-          </div>
+
 
           <div className="flex flex-col items-center">
             <img src={logo} alt="MK Creations" className="h-32 sm:h-48 mb-8 object-contain drop-shadow-xl opacity-90" />
             <div className="gold-line h-px w-24 sm:w-40 my-6 sm:my-10" />
-            <div className="font-serif italic text-[#6b645e] text-sm sm:text-lg max-w-xs">
-              An Architectural Atelier
-            </div>
+
             <div className="font-serif-display text-[#2c2926] text-2xl sm:text-4xl md:text-5xl mt-4 sm:mt-6 leading-tight">
-              Folio of Surfaces
+              Folio of Arts
             </div>
             <div className="font-serif italic text-[#8a6f48] text-xs sm:text-sm mt-2">
-              Volume IX · MMXXVI
+              Volume 1 · 2026
             </div>
           </div>
 
-          <div className="flex flex-col items-center gap-1">
-            <div className="gold-line h-px w-16" />
-            <div className="font-sans-lux text-[9px] sm:text-[10px] text-[#c9a875]/70">
-              Private Edition · No. 014 of 250
-            </div>
-          </div>
+
         </div>
       </HardPage>
 
@@ -147,7 +138,7 @@ const FlipBook = forwardRef<FlipBookHandle, Props>(({ width, height, isMobile, o
           <div className="rule max-w-[120px] mb-6 sm:mb-8" />
           <div className="flex-1 min-h-0 overflow-y-auto pr-2 pb-2 custom-scrollbar">
             <p className="font-serif italic text-[#3a3128] text-sm sm:text-xl leading-snug mb-4 sm:mb-6 max-w-md">
-              MK Creations is an architectural atelier dedicated to the art of the surface. We believe
+              MK Creations is an architectural art of surfaces dedicated to the art of the surface. We believe
               that the ground we walk on and the walls that surround us are more than functional
               boundaries — they are canvases for architectural expression.
             </p>
@@ -159,7 +150,7 @@ const FlipBook = forwardRef<FlipBookHandle, Props>(({ width, height, isMobile, o
             </p>
           </div>
           <div className="mt-4 pt-4 sm:pt-10 flex items-end justify-between text-[10px] sm:text-xs font-sans-lux text-[#8a6f48]">
-            <span>MK Creations Atelier</span>
+            <span>MK Creations Art of Surfaces</span>
             <span>— 001 —</span>
           </div>
         </div>
@@ -210,12 +201,13 @@ const FlipBook = forwardRef<FlipBookHandle, Props>(({ width, height, isMobile, o
             </p>
             <p className="italic">
               For inquiries regarding commissions, material samples, or technical specifications,
-              please reach out to our Rajkot or Milano offices.
+              please reach out to our Rajkot office.
             </p>
           </div>
           <div className="mt-4 pt-4 sm:pt-10 flex items-end justify-between text-[10px] sm:text-xs font-sans-lux text-[#8a6f48]">
-            <span>mkcreations.atelier</span>
-            <span>Rajkot · Milano</span>
+            <span>mkcreations.artofsurfaces</span>
+            <span className="mx-2 opacity-50">•</span>
+            <span>surfaces@mkcreations.com</span>
           </div>
         </div>
       </Page>
@@ -225,7 +217,7 @@ const FlipBook = forwardRef<FlipBookHandle, Props>(({ width, height, isMobile, o
         <div className="relative w-full h-full flex flex-col items-center justify-center p-6 sm:p-14 text-center">
           <img src={logo} alt="MK Creations" className="h-16 sm:h-24 mb-6 object-contain opacity-80" />
           <div className="gold-line h-px w-16 sm:w-24 my-4 sm:my-6" />
-          
+
           <div className="flex flex-col items-center gap-4 sm:gap-6 mt-2">
             <div className="font-sans-lux text-[9px] sm:text-[10px] text-[#c9a875]/80 max-w-sm leading-relaxed">
               <strong className="block mb-2 text-xs sm:text-sm text-[#c9a875]">MK Creation</strong>
@@ -233,7 +225,7 @@ const FlipBook = forwardRef<FlipBookHandle, Props>(({ width, height, isMobile, o
               Infront of Rameshwaram Party Lawns,<br />KALAWAD ROAD NEAR COSMOPLEX CINEMA, MOTA MAVA<br />
               Rajkot-360005, Gujarat
             </div>
-            
+
             <div className="font-sans-lux text-[9px] sm:text-[10px] text-[#c9a875]/80">
               <span className="block mb-1 text-[#c9a875]">Contact:</span>
               9558787870<br />
@@ -253,7 +245,7 @@ const FlipBook = forwardRef<FlipBookHandle, Props>(({ width, height, isMobile, o
           </div>
 
           <div className="absolute bottom-6 sm:bottom-10 font-sans-lux text-[8px] sm:text-[9px] text-[#c9a875]/40">
-            mkcreations.atelier
+            mkcreations.artofsurfaces
           </div>
         </div>
       </HardPage>
