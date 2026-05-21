@@ -4,7 +4,7 @@ import HTMLFlipBook from "react-pageflip";
 import EditorialPage from "./EditorialPage";
 import PageCarousel from "./PageCarousel";
 import { chapters } from "../data/chapters";
-import { logo } from "../assets/assets";
+import { logo, instagramqr, locationqr } from "../assets/assets";
 
 export type FlipBookHandle = {
   next: () => void;
@@ -145,18 +145,20 @@ const FlipBook = forwardRef<FlipBookHandle, Props>(({ width, height, isMobile, o
             Crafting the <em className="font-serif italic">unseen</em> details.
           </h2>
           <div className="rule max-w-[120px] mb-6 sm:mb-8" />
-          <p className="font-serif italic text-[#3a3128] text-base sm:text-xl leading-snug mb-4 sm:mb-6 max-w-md">
-            MK Creations is an architectural atelier dedicated to the art of the surface. We believe
-            that the ground we walk on and the walls that surround us are more than functional
-            boundaries — they are canvases for architectural expression.
-          </p>
-          <p className="font-serif text-[#2a221a] text-[13px] sm:text-sm leading-[1.8] max-w-md dropcap">
-            This digital brochure showcases our recent works in bespoke marble inlays, waterjet precision
-            cutting, and sculptural surface artworks. From monumental luxury residences to high-end
-            hospitality projects, we bridge the gap between traditional stonemasonry and contemporary
-            architectural design.
-          </p>
-          <div className="mt-auto pt-6 sm:pt-10 flex items-end justify-between text-[10px] sm:text-xs font-sans-lux text-[#8a6f48]">
+          <div className="flex-1 min-h-0 overflow-y-auto pr-2 pb-2 custom-scrollbar">
+            <p className="font-serif italic text-[#3a3128] text-sm sm:text-xl leading-snug mb-4 sm:mb-6 max-w-md">
+              MK Creations is an architectural atelier dedicated to the art of the surface. We believe
+              that the ground we walk on and the walls that surround us are more than functional
+              boundaries — they are canvases for architectural expression.
+            </p>
+            <p className="font-serif text-[#2a221a] text-[11px] sm:text-sm leading-[1.8] max-w-md dropcap">
+              This digital brochure showcases our recent works in bespoke marble inlays, waterjet precision
+              cutting, and sculptural surface artworks. From monumental luxury residences to high-end
+              hospitality projects, we bridge the gap between traditional stonemasonry and contemporary
+              architectural design.
+            </p>
+          </div>
+          <div className="mt-4 pt-4 sm:pt-10 flex items-end justify-between text-[10px] sm:text-xs font-sans-lux text-[#8a6f48]">
             <span>MK Creations Atelier</span>
             <span>— 001 —</span>
           </div>
@@ -196,7 +198,7 @@ const FlipBook = forwardRef<FlipBookHandle, Props>(({ width, height, isMobile, o
             Bring your vision to reality.
           </h2>
           <div className="rule max-w-[120px] mb-6 sm:mb-8" />
-          <div className="space-y-3 sm:space-y-4 text-[#2a221a] text-[12px] sm:text-sm leading-[1.8] font-serif max-w-md">
+          <div className="space-y-3 sm:space-y-4 text-[#2a221a] text-[11px] sm:text-sm leading-[1.8] font-serif max-w-md flex-1 min-h-0 overflow-y-auto pr-2 pb-2 custom-scrollbar">
             <p>
               Every surface we create is a result of a deep dialogue between the architect, the
               designer, and our artisans. We specialize in transforming complex geometric concepts
@@ -211,7 +213,7 @@ const FlipBook = forwardRef<FlipBookHandle, Props>(({ width, height, isMobile, o
               please reach out to our Rajkot or Milano offices.
             </p>
           </div>
-          <div className="mt-auto pt-6 sm:pt-10 flex items-end justify-between text-[10px] sm:text-xs font-sans-lux text-[#8a6f48]">
+          <div className="mt-4 pt-4 sm:pt-10 flex items-end justify-between text-[10px] sm:text-xs font-sans-lux text-[#8a6f48]">
             <span>mkcreations.atelier</span>
             <span>Rajkot · Milano</span>
           </div>
@@ -223,10 +225,33 @@ const FlipBook = forwardRef<FlipBookHandle, Props>(({ width, height, isMobile, o
         <div className="relative w-full h-full flex flex-col items-center justify-center p-6 sm:p-14 text-center">
           <img src={logo} alt="MK Creations" className="h-16 sm:h-24 mb-6 object-contain opacity-80" />
           <div className="gold-line h-px w-16 sm:w-24 my-4 sm:my-6" />
-          <div className="font-sans-lux text-[9px] sm:text-[10px] text-[#c9a875]/70 max-w-xs">
-            Atelier of Architectural Surfaces<br />
-            Rajkot · Milano
+          
+          <div className="flex flex-col items-center gap-4 sm:gap-6 mt-2">
+            <div className="font-sans-lux text-[9px] sm:text-[10px] text-[#c9a875]/80 max-w-sm leading-relaxed">
+              <strong className="block mb-2 text-xs sm:text-sm text-[#c9a875]">MK Creation</strong>
+              RADHE KRISHNA PARK -2<br />
+              Infront of Rameshwaram Party Lawns,<br />KALAWAD ROAD NEAR COSMOPLEX CINEMA, MOTA MAVA<br />
+              Rajkot-360005, Gujarat
+            </div>
+            
+            <div className="font-sans-lux text-[9px] sm:text-[10px] text-[#c9a875]/80">
+              <span className="block mb-1 text-[#c9a875]">Contact:</span>
+              9558787870<br />
+              9274787870
+            </div>
+
+            <div className="flex items-center gap-8 mt-2">
+              <div className="flex flex-col items-center gap-2">
+                <img src={instagramqr} alt="Instagram QR" className="w-20 h-20 sm:w-24 sm:h-24 object-contain rounded-md shadow-sm opacity-90 mix-blend-multiply" />
+                <span className="font-sans-lux text-[8px] sm:text-[9px] text-[#c9a875]/60">Instagram</span>
+              </div>
+              <div className="flex flex-col items-center gap-2">
+                <img src={locationqr} alt="Location QR" className="w-20 h-20 sm:w-24 sm:h-24 object-contain rounded-md shadow-sm opacity-90 mix-blend-multiply" />
+                <span className="font-sans-lux text-[8px] sm:text-[9px] text-[#c9a875]/60">Location</span>
+              </div>
+            </div>
           </div>
+
           <div className="absolute bottom-6 sm:bottom-10 font-sans-lux text-[8px] sm:text-[9px] text-[#c9a875]/40">
             mkcreations.atelier
           </div>

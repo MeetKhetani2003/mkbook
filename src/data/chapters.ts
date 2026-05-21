@@ -13,26 +13,23 @@ export type Chapter = {
   specs: { label: string; value: string }[];
   images: { src: string; caption: string }[];
 };
-
 export const chapters: Chapter[] = [
   {
     number: "I",
-    category: "Architectural Surface Art",
+    category: "Inlay Surface Art",
     title: "The Surface Atelier",
-    subtitle: "Monumental inlays, sculpted geometries, and bespoke architectural compositions",
-    year: "MMXXVI",
-    location: "Rajkot · Milano",
-    architect: "MK Creations Atelier",
+    subtitle: "Stone inlays, Stone and wood Inlay , and Stone Brass Inlay",
+    year: "2026",
+    location: "Rajkot · Gujarat",
+    architect: "MK Creations",
 
     intro:
-      "Within the language of architecture, the floor is often treated as silence. At MK Creations, we approach it instead as a canvas for memory, geometry, and permanence. Each composition presented in this folio emerges from the dialogue between stone, proportion, craftsmanship, and atmosphere.",
+      "Within the language of architecture, the floor is often treated as silence. At MK Creations, We deals with inlay work—a craft defined by precision, luxury, and heritage—the stone should feel premium, artistic, and deeply skilled.",
 
     body: [
-      "This opening chapter presents a curated exploration of bespoke marble inlays and architectural surface artworks developed for luxury residences, hospitality environments, and sculptural interiors. Executed through precision waterjet cutting, hand-finishing, and material balancing, these compositions transform functional surfaces into collectible architectural statements.",
+      "At MK Creation, we believe that true luxury lies in the details. Driven by a passion for architectural artistry, we master the intricate craft of inlay work—hand-selecting, cutting, and fitting contrasting materials to form flawless, captivating patterns. From grand floor medallions to bespoke furniture accents, our creations honor the dedication of master artisans while complementing modern aesthetics. Discover the perfect fusion of patience, precision, and passion.",
 
-      "From monumental radial medallions to geometric insert systems and sculptural floor compositions, every work is conceived as an extension of spatial identity. The intention is not ornamentation alone, but the creation of emotional architectural moments — surfaces that anchor movement, light, and atmosphere within space.",
 
-      "Inspired by classical geometry, contemporary minimalism, and artisanal material traditions, the atelier’s work merges modern hospitality aesthetics with timeless craftsmanship. Marble, brass, bronze, and engineered stone converge into compositions that feel both architectural and sculptural in presence.",
 
       "Rather than treating surfaces as background elements, MK Creations positions them as the visual and emotional centerpiece of interior architecture — monumental yet restrained, luxurious yet deeply material in character."
     ],
@@ -40,27 +37,27 @@ export const chapters: Chapter[] = [
     specs: [
       {
         label: "Medium",
-        value: "Marble · Stone · Brass · Bronze"
+        value: "Marble · Stone · Brass · Wood"
       },
       {
         label: "Techniques",
-        value: "Waterjet Cutting · Hand Finishing · Precision Inlay"
+        value: "CNC Cutting · Hand Finishing · Precision Inlay"
       },
       {
         label: "Applications",
-        value: "Luxury Residences · Hospitality · Architectural Interiors"
+        value: "Luxury Residences · Hospitality · Architectural / Interiors Projects"
       },
       {
         label: "Design Language",
-        value: "Geometric · Sculptural · Contemporary Classic"
+        value: "Geometric · Mandala Art · Contemporary Classic"
       },
       {
         label: "Craft Origin",
-        value: "MK Creations Atelier · Rajkot"
+        value: "MK Creations _ More than art · Rajkot"
       },
       {
         label: "Timeline",
-        value: "MMXXIV — MMXXVI"
+        value: "2026"
       }
     ],
 
@@ -68,61 +65,61 @@ export const chapters: Chapter[] = [
       {
         src: work1,
         caption:
-          "Plate I.I — Monumental marble medallion composition installed within a contemporary architectural foyer."
+          "Art. 1.1 — Mandala Inlay Art installed within a contemporary architectural foyer."
       },
 
       {
         src: work2,
         caption:
-          "Plate I.II — Atmospheric spatial composition exploring light, geometry, and reflection."
+          "Art. 1.2 — Atmospheric spatial composition exploring light, geometry, and reflection."
       },
 
       {
         src: work3,
         caption:
-          "Plate I.III — Geometric floor articulation inspired by navigational symmetry and architectural proportion."
+          "Art. 1.3 — Geometric floor articulation inspired by navigational symmetry and architectural proportion."
       },
 
       {
         src: work4,
         caption:
-          "Plate I.IV — Material dialogue between polished marble, brass inlay, and handcrafted finishing."
+          "Art. 1.4 — Material dialogue between polished marble, brass inlay, and handcrafted finishing."
       },
 
       {
         src: work5,
         caption:
-          "Plate I.V — Editorial study of the MK Creations architectural folio within a hospitality-inspired environment."
+          "Art. 1.5 — Shrreji 3d art on marble and granite inlay of the MK Creations architectural folio within a hospitality-inspired environment."
       },
 
       {
         src: work6,
         caption:
-          "Plate I.VI — Sculptural wall composition integrating symbolic form with contemporary architectural minimalism."
+          "Art. 1.6 — Jaisalmer and Marble art form with contemporary architectural minimalism."
       }
     ]
   },
   {
     number: "II",
-    category: "Fragments of Stillness",
+    category: "Art of natural pebbles",
     title: "Pebble Art Collection",
-    subtitle: "Handcrafted sculptural narratives formed through stone, balance & emotion",
-    year: "MMXXVI",
+    subtitle: "Handcrafted Artistic work formed through Pebbles, balance & emotion",
+    year: "2026",
     location: "Collectible Artisan Series",
-    architect: "MK Creations Atelier",
+    architect: "MK Creations",
     intro:
-      "Fragments of Stillness explores the emotional language of stone. Each composition transforms naturally weathered pebbles into intimate sculptural narratives — meditations on memory, connection, family, and silence.",
+      "Every ordinary pebble holds an extraordinary story, shaped by time and water. Pebble stone art transforms these weathered fragments into minimalist masterpieces, proving that nature’s simplest creations can speak volumes when arranged with a creative touch.",
 
     body: [
-      "Minimal in material yet monumental in emotion, these works exist between sculpture and poetry. Organic forms are carefully balanced to create moments of tenderness, movement, and human presence through the permanence of stone.",
+      "Minimal in material yet monumental in emotion,Pebble art is the delicate practice of transforming raw, water-smoothed stones into minimalist narratives. By arranging varied shapes and textures, artists create evocative scenes that rely on the natural silhouette of the stone rather than intricate painted details.",
 
-      "Presented within refined architectural environments, the collection celebrates craftsmanship, restraint, and the quiet luxury of handmade artistry. Each plate becomes an encounter between texture, emotion, and timeless spatial calm.",
+      "Presented within refined architectural environments, the collection celebrates craftsmanship, restraint, and the quiet luxury of handmade artistry. Each Frame becomes an encounter between texture, emotion, and timeless spatial calm.",
     ],
 
     specs: [
-      { label: "Medium", value: "Natural Pebbles · Stone · Driftwood" },
-      { label: "Techniques", value: "Hand Composition · Sculptural Balance" },
-      { label: "Collection", value: "Fragments of Stillness" },
+      { label: "Medium", value: "Natural Pebbles · Stone · Art" },
+      { label: "Techniques", value: "Hand Composition · Nature Balance" },
+      { label: "Collection", value: "Pebbles Art" },
       { label: "Atelier", value: "MK Creations" },
     ],
 
@@ -130,49 +127,49 @@ export const chapters: Chapter[] = [
       {
         src: pebble_1,
         caption:
-          "Plate I — The Silent Figure, a sculptural meditation on solitude and balance.",
+          "Plate I — Unwind, disconnect and find your inner stillness.",
       },
 
       {
         src: pebble_2,
         caption:
-          "Plate II — Sisters Apart, an intimate composition exploring connection through distance.",
+          "Plate II — Because even the deepest thoughts require a solid foundation.",
       },
 
       {
         src: pebble_3,
         caption:
-          "Plate III — The Heart Vessel, a study of emotional weight through collected stone forms.",
+          "Plate III — The art of pure, uninterrupted contemplation.",
       },
 
       {
         src: pebble_4,
         caption:
-          "Plate IV — Family Narratives, handcrafted moments translated into sculptural pebble tableaux.",
+          "Plate IV — Friends Narratives, handcrafted moments translated into sculptural pebble tableaux.",
       },
 
       {
         src: pebble_5,
         caption:
-          "Plate V — Togetherness, a suspended composition exploring intimacy, stillness, and trust.",
+          "Plate V — Nature's raw canvas, reimagined by design.",
       },
     ],
   },
   {
     number: "III",
 
-    category: "Sacred Sculptures & Relief Art",
+    category: "3D Stone Art",
 
-    title: "The Devotional Atelier",
+    title: "Where raw nature meet deep contemplation",
 
     subtitle:
-      "Collectible spiritual sculptures, architectural reliefs & handcrafted sacred artistry",
+      "Collectible Artistic and spiritual 3D Works, where sculpting a new dimension into luxury",
 
-    year: "MMXXVI",
+    year: "2026",
 
-    location: "Temple · Residential · Hospitality Interiors",
+    location: "Temple · Residential · Office, Hospitality and all Interior Projects",
 
-    architect: "MK Creations Atelier",
+    architect: "MK Creations",
 
     intro:
       "The Devotional Atelier explores the intersection of sacred symbolism, handcrafted sculpture, and architectural storytelling. Each work is conceived not merely as ornamentation, but as an emotional spiritual presence designed to inhabit refined contemporary interiors.",
@@ -188,17 +185,17 @@ export const chapters: Chapter[] = [
     specs: [
       {
         label: "Medium",
-        value: "Marble · Stone Relief · Plaster · Resin"
+        value: "Marble · Stone Relief · Resin"
       },
 
       {
         label: "Techniques",
-        value: "Hand Sculpture · Relief Carving · Marble Finishing"
+        value: "CNC Sculpture · Relief Carving · Marble Finishing"
       },
 
       {
         label: "Applications",
-        value: "Luxury Residences · Spiritual Interiors · Hospitality"
+        value: "Luxury Residences · Interiors · Hospitality"
       },
 
       {
@@ -208,12 +205,12 @@ export const chapters: Chapter[] = [
 
       {
         label: "Craft Origin",
-        value: "MK Creations Atelier"
+        value: "MK Creations"
       },
 
       {
         label: "Timeline",
-        value: "MMXXIV — MMXXVI"
+        value: "2026"
       }
     ],
 
@@ -221,7 +218,7 @@ export const chapters: Chapter[] = [
       {
         src: sculpture1,
         caption:
-          "Plate I — Lotus Mandala Relief, a sacred radial composition carved through layered sculptural geometry."
+          "Plate I — Lotus Mandala 3D Art, a sacred radial composition carved through layered sculptural geometry."
       },
 
       {
@@ -233,25 +230,25 @@ export const chapters: Chapter[] = [
       {
         src: sculpture3,
         caption:
-          "Plate III — Portrait Relief Study, exploring texture, shadow, and ceremonial ornamentation."
+          "Plate III — Portrait 3D Art with Fluted Panel, exploring texture, shadow, and ceremonial ornamentation."
       },
 
       {
         src: sculpture4,
         caption:
-          "Plate IV — Equestrian Relief Panel, a study of motion translated through monumental sculptural depth."
+          "Plate IV — Equestrian 3D Panel, a Vastu related panel of motion translated through monumental sculptural depth."
       },
 
       {
         src: sculpture5,
         caption:
-          "Plate V — Desert Narrative Wall, handcrafted relief storytelling inspired by landscape and memory."
+          "Plate V — Desert Narrative Wall, CNC crafted relief storytelling inspired by landscape and memory."
       },
 
       {
         src: sculpture6,
         caption:
-          "Plate VI — Divine Feminine Relief, balancing sacred serenity with architectural sculptural rhythm."
+          "Plate VI — Divine Art, balancing sacred serenity with architectural sculptural rhythm."
       },
 
       {
@@ -269,7 +266,7 @@ export const chapters: Chapter[] = [
       {
         src: sculpture9,
         caption:
-          "Plate IX — Royal Ganesha Study, combining ceremonial ornamentation with luxury marble craftsmanship."
+          "Plate IX — Royal Ganesha, combining ceremonial ornamentation with luxury marble craftsmanship."
       },
 
       {
@@ -281,13 +278,13 @@ export const chapters: Chapter[] = [
       {
         src: sculpture11,
         caption:
-          "Plate XI — Ram Darbar Ensemble, presented as a museum-grade devotional composition in carved marble."
+          "Plate XI — Ram Darbar Ensemble, presented as a Luxury Temple-grade devotional composition in carved marble."
       },
 
       {
         src: sculpture12,
         caption:
-          "Plate XII — Lotus Throne Vishnu, a serene collectible sculpture balancing divinity and sculptural elegance."
+          "Plate XII — Lotus Throne Laxmiji, a serene collectible sculpture balancing divinity and sculptural elegance."
       }
     ]
   },
@@ -296,22 +293,22 @@ export const chapters: Chapter[] = [
 
     category: "Architectural Engraving & Sacred Surface Craft",
 
-    title: "The Engraved Sanctum",
+    title: "The Engraved Craft",
 
     subtitle:
       "Sacred inscriptions, geometric carvings & contemporary spiritual surfaces",
 
-    year: "MMXXVI",
+    year: "2026",
 
     location: "Temple · Residential · Ceremonial Architecture",
 
-    architect: "MK Creations Atelier",
+    architect: "MK Creations",
 
     intro:
-      "The Engraved Sanctum explores the refinement of sacred carving through architectural surfaces, ceremonial inscriptions, geometric symbolism, and devotional spatial detailing.",
+      "The Engraved Art explores the refinement of sacred carving through architectural surfaces, ceremonial inscriptions, geometric symbolism, and devotional spatial detailing.",
 
     body: [
-      "Rather than functioning as decorative graphics alone, each engraved composition is conceived as an architectural intervention — integrating spiritual symbolism directly into stone, marble, tile, and handcrafted surface systems.",
+      "Etched in Stone, Remembered Forever.",
 
       "The collection balances precision CNC engraving, handcrafted finishing, and sacred geometry with a restrained contemporary aesthetic suited for luxury residences, meditation spaces, temple interiors, and collectible spiritual architecture.",
 
@@ -326,7 +323,7 @@ export const chapters: Chapter[] = [
 
       {
         label: "Techniques",
-        value: "CNC Engraving · Relief Carving · Gold Inlay"
+        value: "CNC Engraving · Relief Carving · Inlay"
       },
 
       {
@@ -346,7 +343,7 @@ export const chapters: Chapter[] = [
 
       {
         label: "Craft Origin",
-        value: "MK Creations Atelier"
+        value: "MK Creations"
       }
     ],
 
@@ -354,7 +351,7 @@ export const chapters: Chapter[] = [
       {
         src: engraving_1,
         caption:
-          "Plate I — Sanskrit Stone Inscription engraved through minimal sacred architectural composition."
+          "Plate I — Sanskrit Sloka Stone Inscription engraved through minimal sacred architectural composition."
       },
 
       {
@@ -366,13 +363,13 @@ export const chapters: Chapter[] = [
       {
         src: engraving_3,
         caption:
-          "Plate III — Sacred Om Composition executed through handcrafted curvilinear engraving."
+          "Plate III — Sacred SHREE Composition executed through handcrafted curvilinear engraving."
       },
 
       {
         src: engraving_4,
         caption:
-          "Plate IV — Sri Yantra Relief Panel balancing geometric precision with sculptural depth."
+          "Plate IV — Sri Yantra Engraving Panel balancing geometric precision with Devotional depth."
       },
 
       {
@@ -402,7 +399,7 @@ export const chapters: Chapter[] = [
       {
         src: engraving_9,
         caption:
-          "Plate IX — Ceremonial Threshold Panels combining sacred symbols with architectural material richness."
+          "Plate IX — Umbra is a Symbolic Entrance combining sacred symbols with architectural material richness."
       },
 
       {
@@ -414,13 +411,13 @@ export const chapters: Chapter[] = [
       {
         src: engraving_11,
         caption:
-          "Plate XI — Marble Memorial Bust presented through formal institutional sculptural language."
+          "Plate XI — Govt. Takti Work presented through formal institutional sculptural language."
       },
 
       {
         src: engraving_12,
         caption:
-          "Plate XII — Temple Dedication Plaque executed in polished black granite with gold engraved typography."
+          "Plate XII — Name Plate work Dedication Plaque executed in polished black granite with gold engraved typography."
       },
 
       {
@@ -438,7 +435,7 @@ export const chapters: Chapter[] = [
       {
         src: engraving_15,
         caption:
-          "Plate XV — Om Lotus Relief Panel balancing minimal carving with meditative spatial symmetry."
+          "Plate XV — Om Lotus Engrave Panel balancing minimal carving with meditative spatial symmetry."
       }
     ]
   },
@@ -452,11 +449,11 @@ export const chapters: Chapter[] = [
     subtitle:
       "Handcrafted marble lifestyle objects, collectible decor & refined gifting artifacts",
 
-    year: "MMXXVI",
+    year: "2026",
 
     location: "Luxury Residential · Hospitality · Curated Gifting",
 
-    architect: "MK Creations Atelier",
+    architect: "MK Creations",
 
     intro:
       "Objects of Everyday Luxury explores the transformation of functional artifacts into collectible sculptural experiences. Each piece balances utility, craftsmanship, and material richness through marble, brass, wood, and handcrafted detailing.",
@@ -472,7 +469,7 @@ export const chapters: Chapter[] = [
     specs: [
       {
         label: "Medium",
-        value: "Marble · Brass · Walnut · Stone Inlay"
+        value: "Marble · Brass · Stone Inlay"
       },
 
       {
@@ -505,7 +502,7 @@ export const chapters: Chapter[] = [
       {
         src: gift_1,
         caption:
-          "Plate I — Marble Brass Tea Light Collection, balancing sculptural geometry with refined hospitality styling."
+          "Plate I — Marble and Copper Diya Collection, balancing sculptural geometry with refined hospitality styling."
       },
 
       {
@@ -553,19 +550,19 @@ export const chapters: Chapter[] = [
       {
         src: gift_9,
         caption:
-          "Plate IX — Floral Marble Coaster Set, refined engraved tabletop accessories designed for luxury hospitality environments."
+          "Plate IX — Black Marble Vase Trio, minimalist architectural decor objects emphasizing material purity and silhouette.."
       },
 
       {
         src: gift_10,
         caption:
-          "Plate X — Walnut & Brass Deer Container, balancing sculptural form with collectible functional design."
+          "Plate X — Shreeji Marble Art, balancing sculptural form with collectible functional design."
       },
 
       {
         src: gift_11,
         caption:
-          "Plate XI — Black Marble Vase Trio, minimalist architectural decor objects emphasizing material purity and silhouette."
+          "Plate XI — Marble Glass, refined engraved tabletop accessories for luxury hospitality environments."
       },
 
       {
@@ -577,7 +574,7 @@ export const chapters: Chapter[] = [
       {
         src: gift_13,
         caption:
-          "Plate XIII — Minimal Marble Goblet Artifact, exploring quiet sculptural geometry through handcrafted marble minimalism."
+          "Plate XIII — Minimal wood inlay Goblet Artifact, exploring quiet sculptural geometry through handcrafted marble minimalism."
       }
     ]
   },
@@ -586,7 +583,7 @@ export const chapters: Chapter[] = [
 
     category: "Marble Furniture Collection",
 
-    title: "Sculpted Living Forms",
+    title: "Luxurious Living Forms",
 
     subtitle:
       "Architectural marble furniture crafted as collectible sculptural objects",
@@ -636,7 +633,7 @@ export const chapters: Chapter[] = [
 
       {
         label: "Craft Origin",
-        value: "MK Creations Atelier"
+        value: "MK Creations"
       }
     ],
 
@@ -695,16 +692,16 @@ export const chapters: Chapter[] = [
 
     category: "Divine Sri Yantra Collection",
 
-    title: "Sacred Geometry & Spiritual Architecture",
+    title: "Spiritual Architecture",
 
     subtitle:
       "Handcrafted Sri Yantra installations, sacred geometric reliefs & collectible spiritual objects",
 
-    year: "MMXXVI",
+    year: "2026",
 
     location: "Luxury Spiritual Residences · Meditation Spaces · Temple Interiors",
 
-    architect: "MK Creations Atelier",
+    architect: "MK Creations",
 
     intro:
       "Sacred Geometry & Spiritual Architecture explores the timeless visual language of the Sri Yantra through handcrafted marble reliefs, sacred installations, and collectible spiritual artworks conceived for contemporary luxury interiors.",
@@ -745,7 +742,7 @@ export const chapters: Chapter[] = [
 
       {
         label: "Craft Origin",
-        value: "MK Creations Atelier"
+        value: "MK Creations"
       }
     ],
 
@@ -753,7 +750,7 @@ export const chapters: Chapter[] = [
       {
         src: yantra_1,
         caption:
-          "Plate I — Sacred Marble Sri Yantra Relief, handcrafted through layered sacred geometry and refined architectural carving."
+          "Plate I — Sacred Marble Sri Yantra, handcrafted through layered sacred geometry and refined architectural carving."
       },
 
       {
@@ -791,12 +788,12 @@ export const chapters: Chapter[] = [
     subtitle:
       "Luxury fluted marble walls, sculptural textured surfaces & contemporary architectural detailing",
 
-    year: "MMXXVI",
+    year: "2026",
 
     location:
       "Luxury Residences · Hospitality Interiors · Spa Spaces · Contemporary Architectural Projects",
 
-    architect: "MK Creations Atelier",
+    architect: "MK Creations",
 
     intro:
       "Sculpted Surface Geometry explores fluting as an architectural language of rhythm, shadow, texture, and dimensional elegance through handcrafted marble and contemporary surface craftsmanship.",
@@ -804,7 +801,7 @@ export const chapters: Chapter[] = [
     body: [
       "The collection transforms static walls into sculptural architectural compositions using precision fluting, carved wave textures, layered stone geometry, and refined lighting integration. Each installation creates dynamic depth through light, shadow, and material interaction.",
 
-      "From luxury spa environments and statement bathrooms to hospitality feature walls and contemporary residential interiors, the surfaces are conceived as immersive architectural experiences rather than decorative cladding.",
+      "From luxury environments and statement bathrooms to hospitality feature walls and contemporary residential interiors, the surfaces are conceived as immersive architectural experiences rather than decorative cladding.",
 
       "Executed through premium stone craftsmanship and modern fabrication techniques, the chapter celebrates tactile geometry, sculptural minimalism, and the timeless richness of architectural material expression."
     ],
@@ -842,7 +839,7 @@ export const chapters: Chapter[] = [
 
       {
         label: "Craft Origin",
-        value: "MK Creations Atelier"
+        value: "MK Creations"
       }
     ],
 

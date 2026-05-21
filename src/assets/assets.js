@@ -67,6 +67,8 @@ import fluting_2 from './fluting_2.webp';
 import fluting_3 from './fluting_3.webp';
 import fluting_4 from './fluting_4.webp';
 import logo from './MK Creation.webp'
+import instagramqr from './instagramqr.png'
+import locationqr from './locationqr.png'
 
 export {
     work1,
@@ -137,5 +139,7 @@ export {
     fluting_2,
     fluting_3,
     fluting_4,
-    logo
+    logo,
+    instagramqr,
+    locationqr
 }

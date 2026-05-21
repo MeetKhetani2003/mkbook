@@ -29,7 +29,7 @@ export default function EditorialPage({ chapter, index }: { chapter: Chapter; in
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.2, ease: [0.2, 0.7, 0.2, 1] }}
-        className="font-serif-display text-[#1a1612] text-2xl sm:text-5xl md:text-6xl leading-[0.95] mb-2 sm:mb-3"
+        className="font-serif-display text-[#1a1612] text-2xl sm:text-4xl md:text-5xl leading-[1.05] mb-2 sm:mb-3"
       >
         {chapter.title}
       </motion.h1>
@@ -39,12 +39,12 @@ export default function EditorialPage({ chapter, index }: { chapter: Chapter; in
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 0.4 }}
-        className="font-serif italic text-[#3a3128] text-sm sm:text-base md:text-lg leading-snug mb-5 sm:mb-8 max-w-md"
+        className="font-serif italic text-[#3a3128] text-[13px] sm:text-base md:text-lg leading-snug mb-3 sm:mb-6 max-w-md"
       >
         {chapter.subtitle}
       </motion.p>
 
-      <div className="rule mb-4 sm:mb-6 max-w-[120px]" />
+      <div className="rule mb-3 sm:mb-6 max-w-[120px]" />
 
       {/* Intro / pull-quote */}
       <motion.p
@@ -52,7 +52,7 @@ export default function EditorialPage({ chapter, index }: { chapter: Chapter; in
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.5 }}
-        className="font-serif italic text-[#2a221a] text-base sm:text-lg md:text-xl leading-snug mb-5 sm:mb-7 max-w-md"
+        className="font-serif italic text-[#2a221a] text-sm sm:text-lg md:text-xl leading-snug mb-4 sm:mb-6 max-w-md"
       >
         &ldquo;{chapter.intro}&rdquo;
       </motion.p>
@@ -63,7 +63,7 @@ export default function EditorialPage({ chapter, index }: { chapter: Chapter; in
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.1, delay: 0.65 }}
-        className="space-y-2 sm:space-y-4 text-[#2a221a] text-[11px] sm:text-[13px] md:text-[14px] leading-[1.6] sm:leading-[1.7] font-serif max-w-md flex-1 overflow-hidden"
+        className="space-y-2 sm:space-y-4 text-[#2a221a] text-[11px] sm:text-[13px] md:text-[14px] leading-[1.6] sm:leading-[1.7] font-serif max-w-md flex-1 min-h-0 overflow-y-auto pr-2 pb-2"
       >
         <p className="dropcap">{chapter.body[0]}</p>
         {chapter.body[1] && <p className="hidden sm:block">{chapter.body[1]}</p>}

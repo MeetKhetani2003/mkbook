@@ -120,8 +120,8 @@ export default function PageCarousel({
         className="lux-swiper"
       >
         {images.map((img, i) => {
-          // Lazy render only active and adjacent slides' image assets if the chapter is nearby
-          const isNearActive = isNear && Math.abs(i - activeIdx) <= 1;
+          // Preload more adjacent slides (3) to prevent "still loading" flashes when swiping
+          const isNearActive = isNear && Math.abs(i - activeIdx) <= 3;
 
           return (
             <SwiperSlide key={i}>
@@ -136,6 +136,8 @@ export default function PageCarousel({
                     transition={{ duration: 1.2, ease: [0.2, 0.7, 0.2, 1] }}
                     className="absolute inset-0 w-full h-full object-cover"
                     draggable={false}
+                    loading="lazy"
+                    decoding="async"
                   />
                 ) : (
                   <div className="absolute inset-0 w-full h-full flex items-center justify-center bg-[#f5f0e6]/30 font-sans-lux text-[10px] text-[#8a6f48]/40 shimmer-text">
