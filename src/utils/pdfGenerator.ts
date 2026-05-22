@@ -54,7 +54,7 @@ export const generateBrochurePDF = async () => {
     }
     doc.setFontSize(8);
     doc.setTextColor(181, 154, 109); // Gold-ish
-    doc.text("MK CREATIONS · ART OF SURFACES · MMXXVI", pageWidth - margin, 15, { align: "right" });
+    doc.text("MK CREATIONS ART OF SURFACES 2026", pageWidth - margin, 15, { align: "right" });
     doc.setDrawColor(181, 154, 109);
     doc.setLineWidth(0.1);
     doc.line(margin, 20, pageWidth - margin, 20);
@@ -74,17 +74,12 @@ export const generateBrochurePDF = async () => {
   doc.setFont("times", "bold");
   doc.setFontSize(32);
   doc.setTextColor(44, 41, 38); // Charcoal
-  doc.text("FOLIO OF SURFACES", pageWidth / 2, pageHeight / 2 - 20, { align: "center" });
+  doc.text("Folio of Arts", pageWidth / 2, pageHeight / 2 - 20, { align: "center" });
   
   doc.setFont("times", "italic");
   doc.setFontSize(14);
   doc.setTextColor(138, 111, 72); // Bronze
-  doc.text("An Architectural Art of Surfaces", pageWidth / 2, pageHeight / 2 - 10, { align: "center" });
-  
-  doc.setFont("times", "normal");
-  doc.setFontSize(10);
-  doc.setTextColor(100, 100, 100);
-  doc.text("Volume IX · MMXXVI", pageWidth / 2, pageHeight / 2 + 10, { align: "center" });
+  doc.text("Volume 1 · 2026", pageWidth / 2, pageHeight / 2 - 10, { align: "center" });
   
   addPageFooter(currentPage++);
   
@@ -100,7 +95,7 @@ export const generateBrochurePDF = async () => {
   doc.setFont("times", "italic");
   doc.setFontSize(14);
   doc.setTextColor(100, 100, 100);
-  const introText = "MK Creations is an architectural art of surfaces dedicated to the art of the surface. We believe that the ground we walk on and the walls that surround us are more than functional boundaries — they are canvases for architectural expression.";
+  const introText = "MK Creation is a brand focus on the Architectural art. We believe that the ground we walk on and the walls that surround us are more than functional boundaries _ they are canvases for Art Expression.";
   const introLines = doc.splitTextToSize(introText, contentWidth);
   doc.text(introLines, margin, 60);
   

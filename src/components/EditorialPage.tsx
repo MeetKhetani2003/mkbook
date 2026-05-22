@@ -39,7 +39,7 @@ export default function EditorialPage({ chapter, index }: { chapter: Chapter; in
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 0.4 }}
-        className="font-serif italic text-[#3a3128] text-[12px] sm:text-sm md:text-base leading-snug mb-2 sm:mb-4 max-w-md"
+        className="font-serif text-[#3a3128] text-[10px] sm:text-xs md:text-sm leading-snug mb-2 sm:mb-4 max-w-md"
       >
         {chapter.subtitle}
       </motion.p>
@@ -52,7 +52,7 @@ export default function EditorialPage({ chapter, index }: { chapter: Chapter; in
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.5 }}
-        className="font-serif italic text-[#2a221a] text-[13px] sm:text-[15px] md:text-base leading-snug mb-2 sm:mb-4 max-w-md"
+        className="font-serif text-[#2a221a] text-[11px] sm:text-[12px] md:text-sm leading-snug mb-2 sm:mb-4 max-w-md"
       >
         &ldquo;{chapter.intro}&rdquo;
       </motion.p>
@@ -63,7 +63,10 @@ export default function EditorialPage({ chapter, index }: { chapter: Chapter; in
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.1, delay: 0.65 }}
-        className="space-y-1 sm:space-y-2 text-[#2a221a] text-[10px] sm:text-[12px] md:text-[13px] leading-[1.5] sm:leading-[1.6] font-serif max-w-md flex-1 min-h-0 overflow-y-auto pr-2 pb-2"
+        className="space-y-1 sm:space-y-2 text-[#2a221a] text-[9px] sm:text-[10px] md:text-[11px] leading-[1.5] sm:leading-[1.6] font-serif max-w-md flex-1 min-h-0 overflow-y-auto custom-scrollbar pr-2 pb-2"
+        onWheel={(e) => e.stopPropagation()}
+        onTouchStart={(e) => e.stopPropagation()}
+        onPointerDown={(e) => e.stopPropagation()}
       >
         <p className="dropcap">{chapter.body[0]}</p>
         {chapter.body[1] && <p className="hidden sm:block">{chapter.body[1]}</p>}

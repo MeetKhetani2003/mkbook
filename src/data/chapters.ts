@@ -17,7 +17,7 @@ export const chapters: Chapter[] = [
   {
     number: "I",
     category: "Inlay Surface Art",
-    title: "The Surface Art of Surfaces",
+    title: "The Art of Surfaces",
     subtitle: "Stone inlays, Stone and wood Inlay , and Stone Brass Inlay",
     year: "2026",
     location: "Rajkot · Gujarat",

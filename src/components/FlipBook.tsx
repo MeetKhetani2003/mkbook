@@ -136,11 +136,16 @@ const FlipBook = forwardRef<FlipBookHandle, Props>(({ width, height, isMobile, o
             Crafting the <em className="font-serif italic">unseen</em> details.
           </h2>
           <div className="rule max-w-[120px] mb-6 sm:mb-8" />
-          <div className="flex-1 min-h-0 overflow-y-auto pr-2 pb-2 custom-scrollbar">
-            <p className="font-serif italic text-[#3a3128] text-sm sm:text-xl leading-snug mb-4 sm:mb-6 max-w-md">
-              MK Creations is an architectural art of surfaces dedicated to the art of the surface. We believe
+          <div 
+            className="flex-1 min-h-0 overflow-y-auto pr-2 pb-2 custom-scrollbar"
+            onWheel={(e) => e.stopPropagation()}
+            onTouchStart={(e) => e.stopPropagation()}
+            onPointerDown={(e) => e.stopPropagation()}
+          >
+            <p className="font-serif text-[#3a3128] text-sm sm:text-xl leading-snug mb-4 sm:mb-6 max-w-md">
+              MK Creation is a brand focus on the Architectural art. We believe
               that the ground we walk on and the walls that surround us are more than functional
-              boundaries — they are canvases for architectural expression.
+              boundaries _ they are canvases for Art Expression.
             </p>
             <p className="font-serif text-[#2a221a] text-[11px] sm:text-sm leading-[1.8] max-w-md dropcap">
               This digital brochure showcases our recent works in bespoke marble inlays, waterjet precision
@@ -189,7 +194,12 @@ const FlipBook = forwardRef<FlipBookHandle, Props>(({ width, height, isMobile, o
             Bring your vision to reality.
           </h2>
           <div className="rule max-w-[120px] mb-6 sm:mb-8" />
-          <div className="space-y-3 sm:space-y-4 text-[#2a221a] text-[11px] sm:text-sm leading-[1.8] font-serif max-w-md flex-1 min-h-0 overflow-y-auto pr-2 pb-2 custom-scrollbar">
+          <div 
+            className="space-y-3 sm:space-y-4 text-[#2a221a] text-[11px] sm:text-sm leading-[1.8] font-serif max-w-md flex-1 min-h-0 overflow-y-auto pr-2 pb-2 custom-scrollbar"
+            onWheel={(e) => e.stopPropagation()}
+            onTouchStart={(e) => e.stopPropagation()}
+            onPointerDown={(e) => e.stopPropagation()}
+          >
             <p>
               Every surface we create is a result of a deep dialogue between the architect, the
               designer, and our artisans. We specialize in transforming complex geometric concepts
