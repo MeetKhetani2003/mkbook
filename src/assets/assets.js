@@ -36,6 +36,7 @@ import engraving_12 from './engraving_12.webp';
 import engraving_13 from './engraving_13.webp';
 import engraving_14 from './engraving_14.webp';
 import engraving_15 from './engraving_15.webp';
+import engraving_16 from './engraving_16.webp';
 import gift_1 from './gift_1.webp';
 import gift_2 from './gift_2.webp';
 import gift_3 from './gift_3.webp';
@@ -109,6 +110,7 @@ export {
     engraving_13,
     engraving_14,
     engraving_15,
+    engraving_16,
     gift_1,
     gift_2,
     gift_3,

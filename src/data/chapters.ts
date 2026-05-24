@@ -1,5 +1,5 @@
 
-import { work1, work2, work3, work4, work5, work6, pebble_1, pebble_2, pebble_3, pebble_4, pebble_5, sculpture1, sculpture2, sculpture3, sculpture4, sculpture5, sculpture6, sculpture7, sculpture8, sculpture9, sculpture10, sculpture11, sculpture12, engraving_1, engraving_2, engraving_3, engraving_4, engraving_5, engraving_6, engraving_7, engraving_8, engraving_9, engraving_10, engraving_11, engraving_12, engraving_13, engraving_14, engraving_15, gift_1, gift_2, gift_3, gift_4, gift_5, gift_6, gift_7, gift_8, gift_9, gift_10, gift_11, gift_12, gift_13, furniture_1, furniture_2, furniture_3, furniture_4, furniture_5, furniture_6, furniture_7, furniture_8, yantra_1, yantra_2, yantra_3, yantra_4, yantra_5, fluting_1, fluting_2, fluting_3, fluting_4 } from "../assets/assets.js";
+import { work1, work2, work3, work4, work5, work6, pebble_1, pebble_2, pebble_3, pebble_4, pebble_5, sculpture1, sculpture2, sculpture3, sculpture4, sculpture5, sculpture6, sculpture7, sculpture8, sculpture9, sculpture10, sculpture11, sculpture12, engraving_1, engraving_2, engraving_3, engraving_4, engraving_5, engraving_6, engraving_7, engraving_8, engraving_9, engraving_10, engraving_11, engraving_12, engraving_13, engraving_14, engraving_15, engraving_16, gift_1, gift_2, gift_3, gift_4, gift_5, gift_6, gift_7, gift_8, gift_9, gift_10, gift_11, gift_12, gift_13, furniture_1, furniture_2, furniture_3, furniture_4, furniture_5, furniture_6, furniture_7, furniture_8, yantra_1, yantra_2, yantra_3, yantra_4, yantra_5, fluting_1, fluting_2, fluting_3, fluting_4 } from "../assets/assets.js";
 export type Chapter = {
   number: string;
   category: string;
@@ -436,6 +436,10 @@ export const chapters: Chapter[] = [
         src: engraving_15,
         caption:
           "Plate XV — Om Lotus Engrave Panel balancing minimal carving with meditative spatial symmetry."
+      },
+      {
+        src: engraving_16,
+        caption: "Tiles Engraving with epoxy filling for floor elements. Enhance the Flooring geometry and make it elegance."
       }
     ]
   },
