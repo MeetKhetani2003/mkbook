@@ -253,10 +253,6 @@ const FlipBook = forwardRef<FlipBookHandle, Props>(({ width, height, isMobile, o
               </div>
             </div>
           </div>
-
-          <div className="absolute bottom-6 sm:bottom-10 font-sans-lux text-[8px] sm:text-[9px] text-[#c9a875]/40">
-            mkcreations.artofsurfaces
-          </div>
         </div>
       </HardPage>
     </HTMLFlipBook>
