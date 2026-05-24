@@ -148,11 +148,11 @@ export const chapters: Chapter[] = [
           "Plate IV — Friends Narratives, handcrafted moments translated into sculptural pebble tableaux.",
       },
 
-      {
-        src: pebble_5,
-        caption:
-          "Plate V — Nature's raw canvas, reimagined by design.",
-      },
+      // {
+      //   src: pebble_5,
+      //   caption:
+      //     "Plate V — Nature's raw canvas, reimagined by design.",
+      // },
     ],
   },
   {
