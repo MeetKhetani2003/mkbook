@@ -571,11 +571,11 @@ export const chapters: Chapter[] = [
           "Plate XII — Sacred Marble Face Artifact, a collectible devotional sculpture scaled for luxury shelf styling."
       },
 
-      {
-        src: gift_13,
-        caption:
-          "Plate XIII — Minimal wood inlay Goblet Artifact, exploring quiet sculptural geometry through handcrafted marble minimalism."
-      }
+      // {
+      //   src: gift_13,
+      //   caption:
+      //     "Plate XIII — Minimal wood inlay Goblet Artifact, exploring quiet sculptural geometry through handcrafted marble minimalism."
+      // }
     ]
   },
   {
