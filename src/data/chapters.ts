@@ -293,7 +293,7 @@ export const chapters: Chapter[] = [
 
     category: "Architectural Engraving & Sacred Surface Craft",
 
-    title: "The Engraved Craft",
+    title: "The Engraving Craft",
 
     subtitle:
       "Sacred inscriptions, geometric carvings & contemporary spiritual surfaces",
@@ -677,7 +677,7 @@ export const chapters: Chapter[] = [
       {
         src: furniture_7,
         caption:
-          "Plate VII — Pedestal Marble Table Collection, exploring sculptural proportions through contemporary collectible furniture forms."
+          "Plate VII — Center Table Marble Collection, exploring sculptural proportions through contemporary collectible furniture forms."
       },
 
       {
