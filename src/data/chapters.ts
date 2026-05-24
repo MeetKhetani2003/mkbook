@@ -771,11 +771,7 @@ export const chapters: Chapter[] = [
           "Plate IV — Divine Sri Yantra Installation, conceived as a luxury spiritual architectural centerpiece."
       },
 
-      {
-        src: yantra_5,
-        caption:
-          "Plate V — Collectible Sacred Geometry Object, integrating devotional symbolism with contemporary editorial styling."
-      }
+
     ]
   },
   {

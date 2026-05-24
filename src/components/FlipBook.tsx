@@ -237,7 +237,7 @@ const FlipBook = forwardRef<FlipBookHandle, Props>(({ width, height, isMobile, o
             </div>
 
             <div className="font-sans-lux text-[9px] sm:text-[10px] text-[#c9a875]/80">
-              <span className="block mb-1 text-[#c9a875]">Contact:</span>
+              <span className="block mb-1 text-[#c9a875]">Contact:-</span>
               9558787870<br />
               9274787870
             </div>

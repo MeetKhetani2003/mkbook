@@ -220,11 +220,21 @@ export const generateBrochurePDF = async () => {
   addBranding();
   doc.setFont("times", "bold");
   doc.setFontSize(20);
-  doc.text("MK CREATIONS", pageWidth / 2, pageHeight / 2 - 10, { align: "center" });
+  doc.text("MK CREATIONS", pageWidth / 2, pageHeight / 2 - 30, { align: "center" });
+  
   doc.setFontSize(10);
   doc.setFont("times", "normal");
-  doc.text("Rajkot · Gujarat", pageWidth / 2, pageHeight / 2, { align: "center" });
-  doc.text("www.mkcreations.artofsurfaces", pageWidth / 2, pageHeight / 2 + 10, { align: "center" });
+  
+  doc.text("RADHE KRISHNA PARK -2", pageWidth / 2, pageHeight / 2 - 15, { align: "center" });
+  doc.text("Infront of Rameshwaram Party Lawns,", pageWidth / 2, pageHeight / 2 - 10, { align: "center" });
+  doc.text("KALAWAD ROAD NEAR COSMOPLEX CINEMA, MOTA MAVA", pageWidth / 2, pageHeight / 2 - 5, { align: "center" });
+  doc.text("Rajkot-360005, Gujarat", pageWidth / 2, pageHeight / 2, { align: "center" });
+
+  doc.text("Contact:-", pageWidth / 2, pageHeight / 2 + 10, { align: "center" });
+  doc.text("9558787870", pageWidth / 2, pageHeight / 2 + 15, { align: "center" });
+  doc.text("9274787870", pageWidth / 2, pageHeight / 2 + 20, { align: "center" });
+  
+  doc.text("www.mkcreations.artofsurfaces", pageWidth / 2, pageHeight / 2 + 35, { align: "center" });
   
   addPageFooter(currentPage++);
 
