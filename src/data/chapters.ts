@@ -663,7 +663,7 @@ export const chapters: Chapter[] = [
       {
         src: furniture_4,
         caption:
-          "Plate IV — Architectural Marble Console Installation, integrating stacked geometric stone forms with collectible decor styling."
+          "Plate IV — Architectural marble side table, integrating stacked geometric stone forms with collectible decor styling."
       },
 
       {
@@ -675,7 +675,7 @@ export const chapters: Chapter[] = [
       {
         src: furniture_6,
         caption:
-          "Plate VI — Luxury Marble Handbag Sculpture, handcrafted as a collectible editorial decor statement."
+          "Plate VI — Luxury marble coffee table , handcrafted as a collectible editorial decor statement."
       },
 
       {
