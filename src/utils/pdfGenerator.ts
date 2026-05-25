@@ -1,5 +1,5 @@
 import jsPDF from "jspdf";
-import { logo } from "../assets/assets";
+import { logo, instagramqr, locationqr } from "../assets/assets";
 import { chapters, Chapter } from "../data/chapters";
 
 const getImageData = async (src: string, format: string = 'image/jpeg'): Promise<{dataUrl: string, ratio: number}> => {
@@ -234,6 +234,28 @@ export const generateBrochurePDF = async () => {
   doc.text("9558787870", pageWidth / 2, pageHeight / 2 + 15, { align: "center" });
   doc.text("9274787870", pageWidth / 2, pageHeight / 2 + 20, { align: "center" });
   
+  // Add QR codes
+  try {
+    const igQr = await getImageData(instagramqr, 'image/png');
+    const locQr = await getImageData(locationqr, 'image/png');
+    
+    const qrSize = 25; // 25mm
+    const gap = 20; // gap between QRs
+    const totalW = (qrSize * 2) + gap;
+    const startX = (pageWidth - totalW) / 2;
+    const qrY = pageHeight / 2 + 30;
+    
+    doc.addImage(igQr.dataUrl, "PNG", startX, qrY, qrSize, qrSize);
+    doc.setFontSize(8);
+    doc.setTextColor(150, 150, 150);
+    doc.text("Instagram", startX + qrSize / 2, qrY + qrSize + 4, { align: "center" });
+    
+    doc.addImage(locQr.dataUrl, "PNG", startX + qrSize + gap, qrY, qrSize, qrSize);
+    doc.text("Location", startX + qrSize + gap + qrSize / 2, qrY + qrSize + 4, { align: "center" });
+  } catch (e) {
+    console.error("Failed to load QR codes for PDF", e);
+  }
+
   addPageFooter(currentPage++);
 
   doc.save("MK_Creations_Brochure.pdf");

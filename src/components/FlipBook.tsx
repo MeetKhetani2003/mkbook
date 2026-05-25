@@ -243,12 +243,12 @@ const FlipBook = forwardRef<FlipBookHandle, Props>(({ width, height, isMobile, o
             </div>
 
             <div className="flex items-center gap-8 mt-2">
-              <div className="flex flex-col items-center gap-2">
-                <img src={instagramqr} alt="Instagram QR" className="w-20 h-20 sm:w-24 sm:h-24 object-contain rounded-md shadow-sm opacity-90 mix-blend-multiply" />
+              <div className="flex flex-col items-center gap-1 sm:gap-2 shrink-0">
+                <img src={instagramqr} alt="Instagram QR" width="80" height="80" className="w-16 h-16 sm:w-20 sm:h-20 object-contain rounded-md shadow-sm shrink-0" style={{ WebkitPrintColorAdjust: 'exact', printColorAdjust: 'exact' }} />
                 <span className="font-sans-lux text-[8px] sm:text-[9px] text-[#c9a875]/60">Instagram</span>
               </div>
-              <div className="flex flex-col items-center gap-2">
-                <img src={locationqr} alt="Location QR" className="w-20 h-20 sm:w-24 sm:h-24 object-contain rounded-md shadow-sm opacity-90 mix-blend-multiply" />
+              <div className="flex flex-col items-center gap-1 sm:gap-2 shrink-0">
+                <img src={locationqr} alt="Location QR" width="80" height="80" className="w-16 h-16 sm:w-20 sm:h-20 object-contain rounded-md shadow-sm shrink-0" style={{ WebkitPrintColorAdjust: 'exact', printColorAdjust: 'exact' }} />
                 <span className="font-sans-lux text-[8px] sm:text-[9px] text-[#c9a875]/60">Location</span>
               </div>
             </div>

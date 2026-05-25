@@ -28,8 +28,18 @@ export default function EditorialPage({ chapter, index }: { chapter: Chapter; in
         key={`title-${index}`}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
+
         transition={{ duration: 1, delay: 0.2, ease: [0.2, 0.7, 0.2, 1] }}
-        className="font-serif-display text-[#1a1612] text-2xl sm:text-3xl md:text-4xl leading-[1.05] mb-1 sm:mb-2"
+        className="
+    font-serif-display
+    text-[8px]
+    sm:text-[10px]
+    md:text-[12px]
+    leading-[1.2]
+    mb-4
+    whitespace-pre-line
+    text-[#1a1612]
+  "
       >
         {chapter.title}
       </motion.h1>

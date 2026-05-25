@@ -4,6 +4,8 @@ import work3 from './surface_geometric_01.webp'
 import work4 from './surface_material_01.webp'
 import work5 from './surface_folio_01.webp'
 import work6 from './surface_sculptural_01.webp'
+import work7 from './surface_sculptural_03.webp'
+import work8 from './surface_sculptural_02.webp'
 import pebble_1 from './pebble_1.webp'
 import pebble_2 from './pebble_2.webp'
 import pebble_3 from './pebble_3.webp'
@@ -78,6 +80,8 @@ export {
     work4,
     work5,
     work6,
+    work7,
+    work8,
     pebble_1,
     pebble_2,
     pebble_3,
