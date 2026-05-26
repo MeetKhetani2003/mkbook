@@ -72,6 +72,8 @@ import fluting_4 from './fluting_4.webp';
 import logo from './MK Creation.webp'
 import instagramqr from './instagramqr.png'
 import locationqr from './locationqr.png'
+import front_cover from './front_cover.png'
+import back_cover from './back_cover.png'
 
 export {
     work1,
@@ -147,5 +149,7 @@ export {
     fluting_4,
     logo,
     instagramqr,
-    locationqr
+    locationqr,
+    front_cover,
+    back_cover
 }
