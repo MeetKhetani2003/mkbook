@@ -1,5 +1,5 @@
 
-import { work1, work2, work3, work4, work5, work6, work7, work8, pebble_1, pebble_2, pebble_3, pebble_4, pebble_5, sculpture1, sculpture2, sculpture3, sculpture4, sculpture5, sculpture6, sculpture7, sculpture8, sculpture9, sculpture10, sculpture11, sculpture12, engraving_1, engraving_2, engraving_3, engraving_4, engraving_5, engraving_6, engraving_7, engraving_8, engraving_9, engraving_10, engraving_11, engraving_12, engraving_13, engraving_14, engraving_15, engraving_16, gift_1, gift_2, gift_3, gift_4, gift_5, gift_6, gift_7, gift_8, gift_9, gift_10, gift_11, gift_12, gift_13, furniture_1, furniture_2, furniture_3, furniture_4, furniture_5, furniture_6, furniture_7, furniture_8, yantra_1, yantra_2, yantra_3, yantra_4, yantra_5, fluting_1, fluting_2, fluting_3, fluting_4 } from "../assets/assets.js";
+import { work1, work2, work3, work4, work5, work6, work7, work8, pebble_1, pebble_2, pebble_3, pebble_4, pebble_5, sculpture1, sculpture2, sculpture3, sculpture4, sculpture5, sculpture6, sculpture7, sculpture8, sculpture9, sculpture10, sculpture11, sculpture12, engraving_1, engraving_2, engraving_3, engraving_4, engraving_5, engraving_6, engraving_7, engraving_8, engraving_9, engraving_10, engraving_11, engraving_12, engraving_13, engraving_14, engraving_15, engraving_16, gift_1, gift_2, gift_3, gift_4, gift_5, gift_6, gift_7, gift_8, gift_9, gift_10, gift_11, gift_12, gift_13, gift_14, gift_15, gift_16, gift_17, furniture_1, furniture_2, furniture_3, furniture_4, furniture_5, furniture_6, furniture_7, furniture_8, yantra_1, yantra_2, yantra_3, yantra_4, yantra_5, fluting_1, fluting_2, fluting_3, fluting_4 } from "../assets/assets.js";
 export type Chapter = {
   number: string;
   category: string;
@@ -583,6 +583,26 @@ export const chapters: Chapter[] = [
         src: gift_12,
         caption:
           "Plate XII — Sacred Marble Face Artifact, a collectible devotional sculpture scaled for luxury shelf styling."
+      },
+      {
+        src: gift_14,
+        caption:
+          "Plate XIII — 3D gift art, a contemporary decorative art piece that combines traditional stonecraft with modern design sensibilities."
+      },
+      {
+        src: gift_15,
+        caption:
+          "Plate XIV — Multipurpose Tray, Art of Surfaces with practical elegance,"
+      },
+      {
+        src: gift_16,
+        caption:
+          "Plate XV — Marble Pen Stend, Marble craftsmanship meeting modern desk utility."
+      },
+      {
+        src: gift_17,
+        caption:
+          "Plate XVI — Marble Inlay Tea Coster, artful elevation of everyday tabletop rituals."
       },
 
       // {

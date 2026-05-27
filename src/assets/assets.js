@@ -52,6 +52,10 @@ import gift_10 from './gift_10.webp';
 import gift_11 from './gift_11.webp';
 import gift_12 from './gift_12.webp';
 import gift_13 from './gift_13.webp';
+import gift_14 from './gift_14.webp';
+import gift_15 from './gift_15.webp';
+import gift_16 from './gift_16.webp';
+import gift_17 from './gift_17.webp';
 import furniture_1 from './furniture_1.webp';
 import furniture_2 from './furniture_2.webp';
 import furniture_3 from './furniture_3.webp';
@@ -130,6 +134,10 @@ export {
     gift_11,
     gift_12,
     gift_13,
+    gift_14,
+    gift_15,
+    gift_16,
+    gift_17,
     furniture_1,
     furniture_2,
     furniture_3,

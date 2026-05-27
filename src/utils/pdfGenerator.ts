@@ -152,6 +152,7 @@ export const generateBrochurePDF = async () => {
     unit: "mm",
     format: "a4",
   });
+  doc.setLineHeightFactor(1.1);
 
   const pageWidth = doc.internal.pageSize.getWidth();
   const pageHeight = doc.internal.pageSize.getHeight();
@@ -225,13 +226,13 @@ export const generateBrochurePDF = async () => {
   doc.addPage();
   addBranding();
   doc.setFont("times", "bold");
-  doc.setFontSize(28);
+  doc.setFontSize(30);
   doc.text("The Vision", margin, 40);
   doc.setLineWidth(0.5);
   doc.line(margin, 45, margin + 40, 45);
 
   doc.setFont("times", "italic");
-  doc.setFontSize(16);
+  doc.setFontSize(17);
   doc.setTextColor(100, 100, 100);
   const introText = "MK Creation is a brand focus on the Architectural art. We believe that the ground we walk on and the walls that surround us are more than functional boundaries _ they are canvases for Art Expression.";
   const introLines = doc.splitTextToSize(introText, contentWidth);
@@ -246,48 +247,48 @@ export const generateBrochurePDF = async () => {
     addBranding();
 
     doc.setFont("times", "bold");
-    doc.setFontSize(12);
+    doc.setFontSize(13);
     doc.setTextColor(181, 154, 109);
     doc.text(`CHAPTER ${chapter.number} — ${chapter.category.toUpperCase()}`, margin, 35);
 
-    doc.setFontSize(32);
+    doc.setFontSize(34);
     doc.setTextColor(44, 41, 38);
     doc.text(chapter.title, margin, 50);
 
     doc.setFont("times", "italic");
-    doc.setFontSize(14);
+    doc.setFontSize(15);
     doc.setTextColor(138, 111, 72);
     doc.text(chapter.subtitle, margin, 60);
 
     doc.setFont("times", "normal");
-    doc.setFontSize(12);
+    doc.setFontSize(13);
     doc.setTextColor(60, 60, 60);
     let yPos = 80;
 
     // Intro quote
     doc.setFont("times", "italic");
-    doc.setFontSize(14);
+    doc.setFontSize(15);
     const chIntro = `"${chapter.intro}"`;
     const chIntroLines = doc.splitTextToSize(chIntro, contentWidth);
     doc.text(chIntroLines, margin, yPos);
-    yPos += chIntroLines.length * 6 + 12;
+    yPos += chIntroLines.length * 5.5 + 8;
 
     // Body text
     doc.setFont("times", "normal");
-    doc.setFontSize(12);
+    doc.setFontSize(13);
     for (const p of chapter.body) {
       const pLines = doc.splitTextToSize(p, contentWidth);
       doc.text(pLines, margin, yPos);
-      yPos += pLines.length * 6 + 8;
+      yPos += pLines.length * 5.5 + 5;
     }
 
     // Specs
-    yPos += 10;
+    yPos += 5;
     doc.setDrawColor(200, 200, 200);
     doc.line(margin, yPos, pageWidth - margin, yPos);
-    yPos += 15;
+    yPos += 8;
 
-    doc.setFontSize(10);
+    doc.setFontSize(11);
     doc.setTextColor(181, 154, 109);
     let specX = margin;
     let specY = yPos;
@@ -297,8 +298,8 @@ export const generateBrochurePDF = async () => {
     const numRows = Math.ceil(chapter.specs.length / 2);
     // Calculate a comfortable spacing: max 30mm so it doesn't look too disconnected, min 14mm to avoid overlap
     let dynamicSpacing = availableHeight / numRows;
-    if (dynamicSpacing > 25) dynamicSpacing = 25;
-    if (dynamicSpacing < 14) dynamicSpacing = 14;
+    if (dynamicSpacing > 20) dynamicSpacing = 20;
+    if (dynamicSpacing < 12) dynamicSpacing = 12;
 
     let rowMaxLines = 1;
     chapter.specs.forEach((spec, idx) => {
@@ -309,13 +310,13 @@ export const generateBrochurePDF = async () => {
       doc.text(spec.label.toUpperCase(), specX, specY);
       doc.setFont("times", "normal");
       doc.setTextColor(60, 60, 60);
-      doc.text(valLines, specX, specY + 5);
+      doc.text(valLines, specX, specY + 4.5);
 
       specX += contentWidth / 2;
       if (idx % 2 === 1) {
         specX = margin;
         // The space to the next row is dynamic spacing + extra space for multi-line
-        specY += dynamicSpacing + (rowMaxLines > 1 ? (rowMaxLines - 1) * 4 : 0);
+        specY += dynamicSpacing + (rowMaxLines > 1 ? (rowMaxLines - 1) * 3.5 : 0);
         rowMaxLines = 1; // reset for next row
       }
     });
