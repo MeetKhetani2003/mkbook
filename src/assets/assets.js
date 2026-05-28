@@ -1,3 +1,4 @@
+import office from './office.png';
 import work1 from './surface_hero_01.webp'
 import work2 from './surface_atmospheric_01.webp'
 import work3 from './surface_geometric_01.webp'
@@ -6,10 +7,10 @@ import work5 from './surface_folio_01.webp'
 import work6 from './surface_sculptural_01.webp'
 import work7 from './surface_sculptural_03.webp'
 import work8 from './surface_sculptural_02.webp'
-import pebble_1 from './pebble_1.webp'
-import pebble_2 from './pebble_2.webp'
-import pebble_3 from './pebble_3.webp'
-import pebble_4 from './pebble_4.webp'
+import pebble_1 from './pbbl1.jpeg'
+import pebble_2 from './pbbl2.jpeg'
+import pebble_3 from './pbbl3.jpeg'
+import pebble_4 from './pbbl4.jpeg'
 import pebble_5 from './pebble_5.webp'
 import sculpture1 from './sculpture-1.webp';
 import sculpture2 from './sculpture-2.webp';
@@ -156,6 +157,7 @@ export {
     fluting_3,
     fluting_4,
     logo,
+    office,
     instagramqr,
     locationqr,
     front_cover,

@@ -1,6 +1,6 @@
 import jsPDF from "jspdf";
-import { logo, instagramqr, locationqr, front_cover, back_cover } from "../assets/assets";
-import { chapters, Chapter } from "../data/chapters";
+import { logo, office, front_cover, back_cover } from "../assets/assets";
+import { chapters } from "../data/chapters";
 
 const getImageData = async (src: string, format: string = 'image/jpeg'): Promise<{ dataUrl: string, ratio: number }> => {
   return new Promise((resolve, reject) => {
@@ -22,130 +22,8 @@ const getImageData = async (src: string, format: string = 'image/jpeg'): Promise
     img.src = src;
   });
 };
-const getSquareImageData = async (
-  src: string,
-  format: string = "image/png"
-): Promise<string> => {
-  return new Promise((resolve, reject) => {
-    const img = new Image();
-    img.crossOrigin = "anonymous";
 
-    img.onload = () => {
-      const size = Math.min(img.width, img.height);
 
-      const canvas = document.createElement("canvas");
-      canvas.width = size;
-      canvas.height = size;
-
-      const ctx = canvas.getContext("2d");
-
-      if (!ctx) {
-        reject(new Error("Failed to get canvas context"));
-        return;
-      }
-
-      ctx.drawImage(
-        img,
-        (img.width - size) / 2,
-        (img.height - size) / 2,
-        size,
-        size,
-        0,
-        0,
-        size,
-        size
-      );
-
-      resolve(canvas.toDataURL(format));
-    };
-
-    img.onerror = reject;
-    img.src = src;
-  });
-};
-const getTrimmedQR = async (src: string): Promise<{ dataUrl: string, ratio: number }> => {
-  return new Promise((resolve, reject) => {
-    const img = new Image();
-    img.crossOrigin = "anonymous";
-
-    img.onload = () => {
-      const canvas = document.createElement("canvas");
-      canvas.width = img.width;
-      canvas.height = img.height;
-
-      const ctx = canvas.getContext("2d");
-
-      if (!ctx) {
-        reject(new Error("Canvas context failed"));
-        return;
-      }
-
-      ctx.drawImage(img, 0, 0);
-
-      const imageData = ctx.getImageData(
-        0,
-        0,
-        canvas.width,
-        canvas.height
-      );
-
-      let minX = canvas.width;
-      let minY = canvas.height;
-      let maxX = 0;
-      let maxY = 0;
-
-      for (let y = 0; y < canvas.height; y++) {
-        for (let x = 0; x < canvas.width; x++) {
-          const idx = (y * canvas.width + x) * 4;
-          const r = imageData.data[idx];
-          const g = imageData.data[idx + 1];
-          const b = imageData.data[idx + 2];
-          const alpha = imageData.data[idx + 3];
-
-          // Trim both transparent pixels AND white padding from the outside
-          const isWhite = r > 245 && g > 245 && b > 245;
-          if (alpha > 10 && !isWhite) {
-            minX = Math.min(minX, x);
-            minY = Math.min(minY, y);
-            maxX = Math.max(maxX, x);
-            maxY = Math.max(maxY, y);
-          }
-        }
-      }
-
-      const cropWidth = maxX - minX + 1;
-      const cropHeight = maxY - minY + 1;
-
-      const outCanvas = document.createElement("canvas");
-      outCanvas.width = cropWidth;
-      outCanvas.height = cropHeight;
-
-      const outCtx = outCanvas.getContext("2d");
-
-      if (!outCtx) {
-        reject(new Error("Canvas context failed"));
-        return;
-      }
-
-      outCtx.drawImage(
-        canvas,
-        minX,
-        minY,
-        cropWidth,
-        cropHeight,
-        0,
-        0,
-        cropWidth,
-        cropHeight
-      );
-
-      resolve({ dataUrl: outCanvas.toDataURL("image/png"), ratio: cropHeight / cropWidth });
-    };
-
-    img.onerror = reject;
-    img.src = src;
-  });
-};
 export const generateBrochurePDF = async () => {
   const doc = new jsPDF({
     orientation: "portrait",
@@ -162,15 +40,21 @@ export const generateBrochurePDF = async () => {
   // Load logo once
   let logoDataUrl: string | null = null;
   let logoRatio = 1;
+  let officeDataUrl: string | null = null;
+  let officeRatio = 1;
   try {
     const logoObj = await getImageData(logo, 'image/png');
     logoDataUrl = logoObj.dataUrl;
     logoRatio = logoObj.ratio;
-  } catch (e) {
-    console.error("Failed to load logo for PDF", e);
+    
+    const officeObj = await getImageData(office, 'image/png');
+    officeDataUrl = officeObj.dataUrl;
+    officeRatio = officeObj.ratio;
+  } catch(e) {
+    console.error("Failed to load branding images", e);
   }
 
-  // Load front and back covers
+  // Load front cover
   let frontCoverDataUrl: string | null = null;
   let backCoverDataUrl: string | null = null;
   try {
@@ -189,16 +73,16 @@ export const generateBrochurePDF = async () => {
       doc.addImage(logoDataUrl, "PNG", margin, 10, logoW, logoH);
     }
     doc.setFontSize(8);
-    doc.setTextColor(181, 154, 109); // Gold-ish
+    doc.setTextColor(0, 0, 0); // Gold-ish
     doc.text("MK CREATION ART OF SURFACES", pageWidth - margin, 15, { align: "right" });
-    doc.setDrawColor(181, 154, 109);
-    doc.setLineWidth(0.1);
-    doc.line(margin, 20, pageWidth - margin, 20);
+    
+    
+    
   };
 
   const addPageFooter = (pageNumber: number) => {
     doc.setFontSize(8);
-    doc.setTextColor(150, 150, 150);
+    doc.setTextColor(0, 0, 0);
     doc.text(`Page ${pageNumber}`, pageWidth / 2, pageHeight - 10, { align: "center" });
     doc.text("Rajkot · Gujarat", pageWidth - margin, pageHeight - 10, { align: "right" });
   };
@@ -208,35 +92,56 @@ export const generateBrochurePDF = async () => {
   // === COVER PAGE ===
   if (frontCoverDataUrl) {
     doc.addImage(frontCoverDataUrl, "PNG", 0, 0, pageWidth, pageHeight);
-  } else {
-    addBranding();
-    doc.setFont("times", "bold");
-    doc.setFontSize(32);
-    doc.setTextColor(44, 41, 38); // Charcoal
-    doc.text("Folio of Arts", pageWidth / 2, pageHeight / 2 - 20, { align: "center" });
-
-    doc.setFont("times", "italic");
-    doc.setFontSize(14);
-    doc.setTextColor(138, 111, 72); // Bronze
-    doc.text("Volume 1 · 2026", pageWidth / 2, pageHeight / 2 - 10, { align: "center" });
-    addPageFooter(currentPage++);
   }
 
-  // === INTRO PAGE ===
+  // === TITLE PAGE (Folio of Surfaces) ===
   doc.addPage();
   addBranding();
-  doc.setFont("times", "bold");
-  doc.setFontSize(30);
-  doc.text("The Vision", margin, 40);
-  doc.setLineWidth(0.5);
-  doc.line(margin, 45, margin + 40, 45);
+  doc.setFont("times", "normal");
+  doc.setFontSize(32);
+  doc.setTextColor(0, 0, 0);
+  doc.text("Folio of Surfaces", pageWidth / 2, pageHeight / 2 - 20, { align: "center" });
 
-  doc.setFont("times", "italic");
-  doc.setFontSize(17);
-  doc.setTextColor(100, 100, 100);
+  doc.setFont("times", "normal");
+  doc.setFontSize(14);
+  doc.setTextColor(0, 0, 0);
+  doc.text("Volume 1 · 2026", pageWidth / 2, pageHeight / 2 - 10, { align: "center" });
+  addPageFooter(currentPage++);
+
+    // === INTRO PAGE ===
+  doc.addPage();
+  addBranding();
+  doc.setFont("times", "normal");
+  doc.setFontSize(26);
+  doc.setTextColor(0, 0, 0);
+  doc.text("The Vision", margin, 45); // shifted down from 30
+
+  doc.setFontSize(12);
   const introText = "MK Creation is a brand focus on the Architectural art. We believe that the ground we walk on and the walls that surround us are more than functional boundaries _ they are canvases for Art Expression.";
   const introLines = doc.splitTextToSize(introText, contentWidth);
-  doc.text(introLines, margin, 60);
+  doc.text(introLines, margin, 55); // shifted down from 42
+
+  let currentY = 55 + introLines.length * 6; // start from 55
+
+  if (officeDataUrl) {
+    const imgW = contentWidth;
+    const imgH = officeRatio * imgW;
+    // ensure image doesn't overflow page
+    const maxImgH = pageHeight - currentY - 60; // leave ~60mm for Our Stories
+    const finalImgH = Math.min(imgH, maxImgH);
+    const finalImgW = finalImgH / officeRatio;
+    const imgX = margin + (contentWidth - finalImgW) / 2; // center image
+    doc.addImage(officeDataUrl, "PNG", imgX, currentY + 5, finalImgW, finalImgH);
+    currentY += finalImgH + 25; // increased gap to prevent clipping into Our Stories
+  }
+
+  doc.setFontSize(26);
+  doc.text("Our Stories", margin, currentY);
+  currentY += 10;
+  doc.setFontSize(12);
+  const storyText = "At MK Creation, we don't just create products — we create emotions, spirituality, and artistic identity. Based in Rajkot, Gujarat, our studio blends traditional craftsmanship with modern creativity to craft premium customized art with timeless appeal. What started as a passion for art has now become a vision to create meaningful artistic experiences that connect culture, creativity, and innovation together.";
+  const storyLines = doc.splitTextToSize(storyText, contentWidth);
+  doc.text(storyLines, margin, currentY);
 
   addPageFooter(currentPage++);
 
@@ -246,50 +151,50 @@ export const generateBrochurePDF = async () => {
     doc.addPage();
     addBranding();
 
-    doc.setFont("times", "bold");
-    doc.setFontSize(13);
-    doc.setTextColor(181, 154, 109);
+    doc.setFont("times", "normal");
+    doc.setFontSize(12);
+    doc.setTextColor(0, 0, 0);
     doc.text(`CHAPTER ${chapter.number} — ${chapter.category.toUpperCase()}`, margin, 35);
 
-    doc.setFontSize(34);
-    doc.setTextColor(44, 41, 38);
+    doc.setFontSize(32);
+    doc.setTextColor(0, 0, 0);
     doc.text(chapter.title, margin, 50);
 
-    doc.setFont("times", "italic");
-    doc.setFontSize(15);
-    doc.setTextColor(138, 111, 72);
+    doc.setFont("times", "normal");
+    doc.setFontSize(16);
+    doc.setTextColor(0, 0, 0);
     doc.text(chapter.subtitle, margin, 60);
 
     doc.setFont("times", "normal");
-    doc.setFontSize(13);
-    doc.setTextColor(60, 60, 60);
+    doc.setFontSize(12);
+    doc.setTextColor(0, 0, 0);
     let yPos = 80;
 
     // Intro quote
-    doc.setFont("times", "italic");
-    doc.setFontSize(15);
+    doc.setFont("times", "normal");
+    doc.setFontSize(16);
     const chIntro = `"${chapter.intro}"`;
     const chIntroLines = doc.splitTextToSize(chIntro, contentWidth);
     doc.text(chIntroLines, margin, yPos);
-    yPos += chIntroLines.length * 5.5 + 8;
+    yPos += chIntroLines.length * 7 + 10;
 
     // Body text
     doc.setFont("times", "normal");
-    doc.setFontSize(13);
+    doc.setFontSize(12);
     for (const p of chapter.body) {
       const pLines = doc.splitTextToSize(p, contentWidth);
       doc.text(pLines, margin, yPos);
-      yPos += pLines.length * 5.5 + 5;
+      yPos += pLines.length * 6 + 6;
     }
 
     // Specs
     yPos += 5;
-    doc.setDrawColor(200, 200, 200);
-    doc.line(margin, yPos, pageWidth - margin, yPos);
+    
+    
     yPos += 8;
 
-    doc.setFontSize(11);
-    doc.setTextColor(181, 154, 109);
+    doc.setFontSize(10);
+    doc.setTextColor(0, 0, 0);
     let specX = margin;
     let specY = yPos;
 
@@ -306,11 +211,11 @@ export const generateBrochurePDF = async () => {
       const valLines = doc.splitTextToSize(spec.value, contentWidth / 2 - 10);
       if (valLines.length > rowMaxLines) rowMaxLines = valLines.length;
 
-      doc.setFont("times", "bold");
+      doc.setFont("times", "normal");
       doc.text(spec.label.toUpperCase(), specX, specY);
       doc.setFont("times", "normal");
-      doc.setTextColor(60, 60, 60);
-      doc.text(valLines, specX, specY + 4.5);
+      doc.setTextColor(0, 0, 0);
+      doc.text(valLines, specX, specY + 6.5);
 
       specX += contentWidth / 2;
       if (idx % 2 === 1) {
@@ -355,9 +260,9 @@ export const generateBrochurePDF = async () => {
 
           doc.addImage(imgObj.dataUrl, "JPEG", xPos, yPos, cellW, cellH);
 
-          doc.setFont("times", "italic");
-          doc.setFontSize(10);
-          doc.setTextColor(100, 100, 100);
+          doc.setFont("times", "normal");
+          doc.setFontSize(8);
+          doc.setTextColor(0, 0, 0);
           const capLines = doc.splitTextToSize(imgData.caption, cellW);
           doc.text(capLines, xPos + cellW / 2, yPos + cellH + 5, { align: "center" });
 
@@ -370,77 +275,32 @@ export const generateBrochurePDF = async () => {
     }
   }
 
-  // === BACK COVER ===
+    // === BACK COVER ===
   doc.addPage();
   if (backCoverDataUrl) {
     doc.addImage(backCoverDataUrl, "PNG", 0, 0, pageWidth, pageHeight);
+
+    // We do NOT draw QR codes manually anymore, as the user has baked them into the back_cover.png asset.
+
   } else {
     addBranding();
-    doc.setFont("times", "bold");
-    doc.setFontSize(20);
-    doc.text("MK CREATION", pageWidth / 2, pageHeight / 2 - 30, { align: "center" });
-
-    doc.setFontSize(10);
     doc.setFont("times", "normal");
+    doc.setFontSize(40);
+    doc.setTextColor(0, 0, 0);
+    doc.text("MK CREATION", pageWidth / 2, pageHeight / 2 - 60, { align: "center" });
 
-    doc.text("RADHE KRISHNA PARK -2", pageWidth / 2, pageHeight / 2 - 15, { align: "center" });
-    doc.text("INFRONT OF RAMESHWARAM PARTY LAWNS,", pageWidth / 2, pageHeight / 2 - 10, { align: "center" });
-    doc.text("KALAWAD ROAD NEAR COSMOPLEX CINEMA, MOTA MAVA", pageWidth / 2, pageHeight / 2 - 5, { align: "center" });
+    doc.setFontSize(18);
+
+    doc.text("RADHE KRISHNA PARK -2", pageWidth / 2, pageHeight / 2 - 30, { align: "center" });
+    doc.text("INFRONT OF RAMESHWARAM PARTY LAWNS,", pageWidth / 2, pageHeight / 2 - 20, { align: "center" });
+    doc.text("KALAWAD ROAD NEAR COSMOPLEX CINEMA, MOTA MAVA", pageWidth / 2, pageHeight / 2 - 10, { align: "center" });
     doc.text("RAJKOT-360005, GUJARAT", pageWidth / 2, pageHeight / 2, { align: "center" });
 
-    doc.text("CONTACT:-", pageWidth / 2, pageHeight / 2 + 10, { align: "center" });
-    doc.text("9558787870", pageWidth / 2, pageHeight / 2 + 15, { align: "center" });
-    doc.text("9274787870", pageWidth / 2, pageHeight / 2 + 20, { align: "center" });
-  }
-
-  // Add QR codes
-  // We will position the real QR codes exactly over the fake ones on the left side of the back cover image.
-  try {
-    const instagramQRObj = await getTrimmedQR(instagramqr);
-    const locationQRObj = await getTrimmedQR(locationqr);
-
-    // ==========================================
-    // --- ADJUSTABLE QR CONFIGURATION ---
-    // Tweak these values to adjust QR placement and size on the back cover
-    // ==========================================
-    const qrConfig = {
-      width: 23,  // Slightly wider
-      y: 161,     // Moved down ~5px equivalent (from 159 to 161)
-      x1: 5,      // Moved left ~5px equivalent (from 7 to 5)
-      x2: 33      // Moved left ~5px equivalent (from 35 to 33)
-    };
-
-    const instH = qrConfig.width * instagramQRObj.ratio;
-    const locH = qrConfig.width * locationQRObj.ratio;
-
-    // Draw a beige rectangle to cover BOTH fake QRs perfectly 
-    // Shifted down to y=152 so it NO LONGER cuts off the bottom border of the icons above!
-    doc.setFillColor(247, 243, 235); // Lighter beige to blend better
-    doc.rect(4, 152, 57, 42, 'F');
-
-    // Instagram QR
-    doc.addImage(
-      instagramQRObj.dataUrl,
-      "PNG",
-      qrConfig.x1,
-      qrConfig.y,
-      qrConfig.width,
-      instH
-    );
-
-    // Location QR
-    doc.addImage(
-      locationQRObj.dataUrl,
-      "PNG",
-      qrConfig.x2,
-      qrConfig.y,
-      qrConfig.width,
-      locH
-    );
-
-  } catch (e) {
-    console.error("Failed to load QR codes for PDF", e);
+    doc.text("CONTACT:-", pageWidth / 2, pageHeight / 2 + 20, { align: "center" });
+    doc.text("9558787870", pageWidth / 2, pageHeight / 2 + 30, { align: "center" });
+    doc.text("9274787870", pageWidth / 2, pageHeight / 2 + 40, { align: "center" });
   }
 
   doc.save("MK_Creations_Brochure.pdf");
 };
+
