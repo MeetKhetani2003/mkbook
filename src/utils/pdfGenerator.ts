@@ -158,17 +158,23 @@ export const generateBrochurePDF = async () => {
 
     doc.setFontSize(32);
     doc.setTextColor(0, 0, 0);
-    doc.text(chapter.title, margin, 50);
+    const titleLines = doc.splitTextToSize(chapter.title, contentWidth);
+    doc.text(titleLines, margin, 50);
+
+    let headingY = 50 + (titleLines.length * 10);
 
     doc.setFont("times", "normal");
     doc.setFontSize(16);
     doc.setTextColor(0, 0, 0);
-    doc.text(chapter.subtitle, margin, 60);
+    const subtitleLines = doc.splitTextToSize(chapter.subtitle, contentWidth);
+    doc.text(subtitleLines, margin, headingY);
+
+    headingY += (subtitleLines.length * 7) + 5;
 
     doc.setFont("times", "normal");
     doc.setFontSize(12);
     doc.setTextColor(0, 0, 0);
-    let yPos = 80;
+    let yPos = headingY;
 
     // Intro quote
     doc.setFont("times", "normal");
@@ -176,7 +182,7 @@ export const generateBrochurePDF = async () => {
     const chIntro = `"${chapter.intro}"`;
     const chIntroLines = doc.splitTextToSize(chIntro, contentWidth);
     doc.text(chIntroLines, margin, yPos);
-    yPos += chIntroLines.length * 7 + 10;
+    yPos += chIntroLines.length * 7 + 6;
 
     // Body text
     doc.setFont("times", "normal");
@@ -184,14 +190,11 @@ export const generateBrochurePDF = async () => {
     for (const p of chapter.body) {
       const pLines = doc.splitTextToSize(p, contentWidth);
       doc.text(pLines, margin, yPos);
-      yPos += pLines.length * 6 + 6;
+      yPos += pLines.length * 6 + 4;
     }
 
     // Specs
-    yPos += 5;
-    
-    
-    yPos += 8;
+    yPos += 6;
 
     doc.setFontSize(10);
     doc.setTextColor(0, 0, 0);
